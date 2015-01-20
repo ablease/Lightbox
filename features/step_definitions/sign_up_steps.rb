@@ -1,4 +1,5 @@
 Given(/^I have entered my name$/) do
+	visit('/sign_up')
 	fill_in 'name', :with => "Test"
 end
 
@@ -11,7 +12,7 @@ Given(/^I have entered my medical registration number$/) do
 end
 
 When(/^I click sign up$/) do
-	click_button 'Sign up'
+	click_button 'Sign Up'
 end
 
 Then(/^I should see a success message$/) do
