@@ -1,6 +1,7 @@
 require 'sinatra/base'
 require 'rack-flash'
 require 'data_mapper'
+require 'bcrypt'
 
 env = ENV['Rack_Env'] || 'development'
 
