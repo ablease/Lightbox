@@ -1,6 +1,16 @@
 require 'sinatra/base'
 require 'rack-flash'
+require 'data_mapper'
 
+env = ENV['Rack_Env'] || 'development'
+
+DataMapper.setup(:default, "postgres://localhost/lightbox_#{env}")
+
+require './lib/user'
+
+DataMapper.finalize
+
+DataMapper.auto_upgrade!
 
 class Lightbox < Sinatra::Base
 
@@ -8,7 +18,6 @@ class Lightbox < Sinatra::Base
   use Rack::Flash
 
   set :views, Proc.new { File.join(root,"..", "views") }
-
 
   get '/' do
     erb :index
