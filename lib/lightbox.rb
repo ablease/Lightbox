@@ -29,7 +29,7 @@ class Lightbox < Sinatra::Base
   end
 
   post '/sign_up' do
-    @new_user = User.create(name: params["name"], email: params["email"], password: params["password"])
+    @new_user = User.create(name: params["name"], email: params["email"], password: params["password"], password_confirmation: params["password_confirmation"])
     if 	@new_user.save
       session[:user_id] = @new_user.id
       flash[:notice] = "Successfully signed up"
