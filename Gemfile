@@ -8,4 +8,5 @@ group :development, :test do
   gem 'cucumber-sinatra'
   gem 'rspec'
   gem 'launchy'
+  gem 'shotgun'
 end

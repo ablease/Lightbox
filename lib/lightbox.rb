@@ -3,10 +3,14 @@ require 'sinatra/base'
 class Lightbox < Sinatra::Base
 
   set :views, Proc.new { File.join(root,"..", "views") }
-  
+
 
   get '/' do
     erb :index
+  end
+
+  get '/sign_up' do
+    erb :sign_up
   end
 
   # start the server if ruby file executed directly
