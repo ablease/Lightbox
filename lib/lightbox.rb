@@ -1,8 +1,12 @@
 require 'sinatra/base'
 
 class Lightbox < Sinatra::Base
+
+  set :views, Proc.new { File.join(root,"..", "views") }
+  
+
   get '/' do
-    'Hello Lightbox!'
+    erb :index
   end
 
   # start the server if ruby file executed directly
