@@ -8,6 +8,7 @@ class User
   property :name, String
   property :email, String
   property :password_digest, Text
+  property :phone, Integer
   property :gmc_number, Integer
 
   def password=(password)
@@ -18,4 +19,7 @@ class User
   attr_reader :password
   attr_accessor :password_confirmation
   validates_confirmation_of :password
+  validates_uniqueness_of :email
+  validates_uniqueness_of :phone
+
 end

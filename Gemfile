@@ -13,4 +13,6 @@ group :development, :test do
   gem 'rspec'
   gem 'launchy'
   gem 'shotgun'
+  gem 'database_cleaner'
+  
 end
