@@ -41,6 +41,28 @@ class Lightbox < Sinatra::Base
 
   end
 
+  get '/login' do
+    erb :login
+  end
+
+  post 'login' do
+    email, password = params[:email], params[:password]
+    user= User.authenticate(email, password)
+
+    if user
+      session[:user_id] = user.id
+      redirect '/'
+      flash[:notice] = ["You are logged in"]
+    else
+      flash[:notice] = ["The email or password are incorrect"]
+      redirect '/login'
+    end
+  end
+
+
+
+
+
   def current_user
     @current_user ||= User.get(session[:user_id]) if session[:user_id]
   end
