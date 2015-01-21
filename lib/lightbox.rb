@@ -51,6 +51,7 @@ class Lightbox < Sinatra::Base
 
     if user
       session[:user_id] = user.id
+      flash[:notice] = "Successfully logged in"
       redirect to('/')
     else
       flash[:notice] = ["The email or password are incorrect"]
