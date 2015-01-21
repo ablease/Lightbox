@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'sass'
+gem 'compass'
 gem 'sinatra'
 gem 'rack-flash3'
 gem 'data_mapper'
@@ -15,5 +17,4 @@ group :development, :test do
   gem 'launchy'
   gem 'shotgun'
   gem 'database_cleaner'
-  
 end
