@@ -10,7 +10,7 @@ Our challenge for the 2 week final project at Makers Academy is to develop a cha
    
 Technologies are not specified within the brief - they must be decided upon by the teams based on the merits of each technology for the project they have been given.
    
-Projects should adhere to an Agile methodology and be developed in a [test driven](http://agiledata.org/essays/tdd.html) manner wherever possible.
+Projects should adhere to an [Agile methodology](http://agilemethodology.org/) and be developed in a [test driven](http://agiledata.org/essays/tdd.html) manner wherever possible.
       
 ### The Lightbox Team
 
@@ -46,45 +46,38 @@ With our Client's problem now defined - the next step was to structure a solutio
     
 ![MVP](https://fastmonkeys.files.wordpress.com/2014/06/howtobuildmvp.gif?w=500)
     
-This forms a solid framework on which the rest of the project can be built against. Each planned version and its features is summarised below:
+This forms a solid framework on which the rest of the project can be built against. Each planned version and its features is summarised below, and shown on our [live project management board](https://www.pivotaltracker.com/n/projects/1253704):
       
-___________________________________________________________________
+____________________________________________________________________________________________________________________________
 #####Version 1: Skateboard
 
-+ Feature 1: Users must authenticate themselves vs GMC data to be able to log in
-+ Feature 2:  
-+ Feature 3: 
-
-#####Version 2: Scooter
-
-+ Feature 4:    
-+ Feature 5: 
-
-#####Version 3: Bike
-
-+ Feature 6:  
-+ Feature 7: 
++ Feature 1: A User can 'Sign Up' with an email address and a General Medical Council (GMC) number. 
++ Feature 2: A User can 'Login' to a single chat room and exchange messsages with other users.
++ Feature 3: A User is presented with a *basic* mobile web app format - as sketched. [here](https://makerslightbox.mybalsamiq.com/projects/lightbox/lightbox%20app).
     
-______________________________________________________________________________________
-     
-##### Experimenting
+#####Version 2: Scooter
+    
++ Feature 4: A User's GMC number is validated at the GMC website when they 'Sign Up'.
++ Feature 5: A User can create and/or join numerous chat rooms.
+    
+#####Version 3: Bike
+    
++ Feature 6: A User's messages are protected using end-to-end encryption. 
++ Feature 7: A User is presented with a more aesthetic mobile web format, plus a basic desktop view. 
 
-Before we decided on a stack of technology to use to build this project, we experimented with a few options
-- Socket.io and Node.js + Express.js
-It was quick and relativly simple to setup a basic chat server using Socket.io.
+___________________________________________________________________
+    
+##### Experimenting with frameworks
+    
+Before we decided on a stack of technology to use to build this project we spiked a few options, namely [Socket.io](http://socket.io/), [Node.js](http://nodejs.org/) & [Express.js](http://expressjs.com/).
+    
+It was quick and relativly straight forward to setup a basic chat server using Socket.io, but implentation beyond the most simple and most basic features seemed to promise slow progress and a lack of flexibility for what we needed on the security features for our App.
+    
+Having used Sinatra extensively for previous projects, the framework felt easy to implement with more flexibility, and with our current skill set, easily expandible into later stage features. 
+    
+###Execution of the Project
+    
+####Version 1 
+    
 
-- Cramp and sinatra
-Having used sinatra extensively for previous projects, these technologies felt familiar
-and easy to use, and with our current skill set easily expandible into other features. 
-
-### User Story Discussion
-
-We held a discussion to describe the type of stakeholders in our app and came to the
-following conclusions
-- Doctor who needs a second opinion
-- Doctor who wants to give a second opinion
-- Patient
-- System Administrator
-
-We then describe use cases of each stakeholder and outlined our workflow using pivitol tracker
 
