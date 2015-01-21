@@ -23,3 +23,20 @@ feature "User Sign up" do
 
 
 end
+
+feature "User Log In" do
+
+  def log_in(email="Test@test.com", password="test")
+    visit '/login'
+    expect(page.status_code).to eq 200
+    fill_in :email, with: email
+    fill_in :password, with: password
+    click_button 'Log In'
+  end
+
+  scenario 'with email and password that match' do
+    log_in
+    expect(page).to have_content('Successfully logged in')
+    expect(User.first.email).to eq 'Test@test.com'
+  end
+end
