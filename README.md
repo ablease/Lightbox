@@ -1,48 +1,49 @@
-###Secure Chat for Doctors
+#Makers Academy Final Project: Lightbox - A Secure Chat for Doctors
+
+[![Test Coverage](to be added)](to be added)
+[![Code Climate](to be added)](to be added)
+
+![docgif](http://www.gifss.com/profesiones/doctores/doctor-05.gif)
 
 Our challenge for the 2 week final project at Makers Academy is to develop
-a chat app specifically for use by Doctors.
+a chat application specifically for use by Doctors.
 
-#The Problem
+### The Lightbox Team
 
-As a Medical Professional, attaining a second opinion for a patient is a length
-and expensive process. Patient data may only be viewed by medical staff
-outside of the patients case under a myriad of rules and regulations. 
+- [Ben Conway](https://github.com/Benc93)
+- [Simon Lange](https://github.com/langesi)
+- [Daniel Obembe](https://github.com/ayoobembe)
+- [Alex Blease](https://github.com/ablease)
+- [Chris Batts](https://github.com/chrisjbatts)
 
-Traditionally a doctor may meet with another doctor in a private face-to-face
-environment to discuss patient cases. At this meeting a Caldicott Guardian
-must be present and various legal documents signed to ensure patient data
-security. 
+| Languages | Technologies  | Testing Tools| Misc
+| :---------------------------------------------- |:------------|:-----------|:----|
+| Javascript|[Sinatra](http://www.sinatrarb.com/)                |  [RSpec](http://rspec.info/)           |            |
+| HTML      |[WebSocket](http://en.wikipedia.org/wiki/WebSocket) |             |           |
+| CSS       |[Cramp](https://github.com/lifo/cramp)              |             | 
+| Ruby      |                                                    |             | 
 
-### Questions to Ask Tomorrow
 
-- Currently, what is the second opinion process, as a doctor who needs a second opinion
-- What can be improved in the second opinion process, how would this app help?
-- What problem needs to be solved? Why do you need to do this?
-- What are the legal limitations of an electronic second opinion process?
-- What information needs to be transfered between specialists?
-- How regularly to you need to revisit cases?
-- How do you know who to ask for a second opinion for a specific case?
-- How do you approach doctors for a second opinion?
-- Why would a specialist be motivated to give you a second opinion? Financial gain?
-or is there a mandatory requirement for practising doctors?
-- Would there be implications taking this app to a worldwide audience?
+###The Problem
 
-### The Team
-- Chris Batts
-- Ben Conway
-- Simon Lange
-- Daniel Obembe
-- Alex Blease
+As a Medical Professional, getting a second opinion for a patient is a lengthy and expensive process. Patient data may only be viewed by medical staff outside of the patient's case under a myriad of rules and regulations. This means that this process is often conducted in prearranged face to face meetings, at great cost in terms of time and inconvenience for the participating doctors.
 
-### Initial Research
+Traditionally a doctor could meet with another doctor in a private face-to-face environment to discuss one-off patient cases. At this meeting a [Caldicott Guardian](http://systems.hscic.gov.uk/data/ods/searchtools/caldicott/index_html) must be present and various legal documents signed to ensure patient data security.
+
+Of course Doctors already have access to various popular chat applications, such as WhatsApp and Facebook Messenger, but they do not adequately answer questions surrounding patient data security. 
+
+What if Medical Professionals had a dedicated chat application that verifies users as Qualified Medical Professionals and adhered to patient data protection standards in the UK? 
+
+###Version 0 - The Planning Stages
+
+#### Research Resources
 
 Over the weekend,
-- [Information comission](https://ico.org.uk/)
+- [Information commission](https://ico.org.uk/)
 - [DGL](http://www.helixhealth.co.uk/products/dgl.181.html)
 - [HCPC](http://www.hpc-uk.org/)
-- Read up on patient date security
-- Caldicott principals
+- Read up on patient data security
+- [Caldicott principals](http://www.tameside.gov.uk/sap/principles)
 - Data protection, in what context will it apply for our app?
 - Brush up on technology covered so far in the course
 - Come up with app name and branding
@@ -54,7 +55,6 @@ Below are some technologies we researched for inspiration to this project.
 
 - [chat servers](http://socket.io/get-started/chat/)
 - [sinatra chat](https://blog.engineyard.com/2013/getting-started-with-ruby-and-websockets)
-- [Caldicott](https://www.wcppe.org.uk/sites/default/files/file/NES/CaldicottPrinciples-DataProtectionAct.pdf)
 - [Cramp](https://github.com/lifo/cramp)
 
 ##### Experimenting
