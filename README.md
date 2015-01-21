@@ -1,5 +1,5 @@
 #Makers Academy Final Project: Lightbox
-##A Secure Chat for Doctors
+##A Secure Chat App for Doctors
 
 [![Test Coverage](to be added)](to be added)
 [![Code Climate](to be added)](to be added)
@@ -11,7 +11,7 @@ Our challenge for the 2 week final project at Makers Academy is to develop a cha
 Technologies are not specified within the brief - they must be decided upon by the teams based on the merits of each technology for the project they have been given.
    
 Projects should adhere to an Agile methodology and be developed in a [test driven](http://agiledata.org/essays/tdd.html) manner wherever possible.
-   
+      
 ### The Lightbox Team
 
 - [Ben Conway](https://github.com/Benc93)
@@ -20,13 +20,13 @@ Projects should adhere to an Agile methodology and be developed in a [test drive
 - [Alex Blease](https://github.com/ablease)
 - [Chris Batts](https://github.com/chrisjbatts)
 
-### Technologies used
+### Technologies Used
    
 | Languages | Technologies  | Testing Tools| Misc
 | :---------------------------------------------- |:------------|:-----------|:----|
-| Javascript|[Sinatra](http://www.sinatrarb.com/)                |[RSpec](http://rspec.info/)    |            |
-| HTML      |[WebSocket](http://en.wikipedia.org/wiki/WebSocket) |[Cucumber](http://cukes.info/) |           |
-| CSS       |[Cramp](https://github.com/lifo/cramp)              |             | 
+| Javascript|[Sinatra](http://www.sinatrarb.com/)                |[RSpec](http://rspec.info/)    |Project Homepage: [Agile Ventures](http://agileventures.org/projects/secondappinion)      |
+| HTML      |[WebSocket](http://en.wikipedia.org/wiki/WebSocket) |[Cucumber](http://cukes.info/) |Project Management: [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/1253704)      |
+| CSS       |[Cramp](https://github.com/lifo/cramp)              |            | GUI Sketches: [Balsamiq](https://makerslightbox.mybalsamiq.com/projects/lightbox/lightbox%20app) |
 | Ruby      |                                                    |             | 
     
    
@@ -41,24 +41,32 @@ Of course Doctors already have access to various popular chat applications, such
 What if Medical Professionals had a dedicated chat application that verifies users as Qualified Medical Professionals and adhered to patient data protection standards in the UK? 
    
 ###Version 0 - Planning Stages
-   
-![MVP](https://fastmonkeys.files.wordpress.com/2014/06/howtobuildmvp.gif?w=500)
      
-With our Client's problem now defined - the next step was to structure a solution. Vital features that meet the minimum criteria for a basic solution are priorised forward during the planning stage. "Nice to have" features are planned into later versions of the application (in the manner shown above). 
-   
-#### Research Resources
-   
-Over the weekend,
-- [Information commission](https://ico.org.uk/)
-- [DGL](http://www.helixhealth.co.uk/products/dgl.181.html)
-- [HCPC](http://www.hpc-uk.org/)
-- Read up on patient data security
-- [Caldicott principals](http://www.tameside.gov.uk/sap/principles)
-- Data protection, in what context will it apply for our app?
-- Brush up on technology covered so far in the course
-- Come up with app name and branding
-- Look at other apps for inspiration/features/design/improvments
+With our Client's problem now defined - the next step was to structure a solution. Vital features that meet the minimum criteria for a basic solution are priorised forward during the planning stage. "Nice to have" features are planned into later versions of the application (in the manner shown below).  
+    
+![MVP](https://fastmonkeys.files.wordpress.com/2014/06/howtobuildmvp.gif?w=500)
+    
+This forms a solid framework on which the rest of the project can be built against. Each planned version and its features is summarised below:
+      
+___________________________________________________________________
+#####Version 1: Skateboard
 
++ Feature 1: Users must authenticate themselves vs GMC data to be able to log in
++ Feature 2:  
++ Feature 3: 
+
+#####Version 2: Scooter
+
++ Feature 4:    
++ Feature 5: 
+
+#####Version 3: Bike
+
++ Feature 6:  
++ Feature 7: 
+    
+______________________________________________________________________________________
+     
 ##### Experimenting
 
 Before we decided on a stack of technology to use to build this project, we experimented with a few options
