@@ -3,27 +3,20 @@ require 'rack-flash'
 require 'bcrypt'
 require 'em-websocket'
 
+require_relative 'controllers/application'
 require_relative 'data_mapper_setup'
-
-#DataMapper.setup(:default, "postgres://localhost/lightbox_#{env}")
-
-#require './lib/models/user'
-
-#DataMapper.finalize
-
-#DataMapper.auto_upgrade!
-
 
 class Lightbox < Sinatra::Base
 
   enable :sessions
+  set :root, File.dirname(__FILE__)
+  set :views, Proc.new { File.join(root, "/views") }
   use Rack::Flash
 
-  set :views, Proc.new { File.join(root, "/views") }
 
-  get '/' do
-    erb :index
-  end
+#  get '/' do
+#    erb :index
+#  end
 
     get '/sign_up' do
       erb :sign_up
