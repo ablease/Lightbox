@@ -6,9 +6,11 @@
   </head>
 
   <body>
-  <div class="row">
-  <p>Lightbox</p>
-  </div>
+    <div class="row fullWidth">
+      <div class="large-12 columns">
+        <p>Lightbox</p>
+      </div>
+    </div>
     <% if current_user %>
       <p> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
     <% end %>
