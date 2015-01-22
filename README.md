@@ -51,7 +51,7 @@ This forms a solid framework on which the rest of the project can be built again
 ____________________________________________________________________________________________________________________________
 #####Version 1: Skateboard
 
-+ Feature 1: A User can 'Sign Up' with an email address and a General Medical Council (GMC) number. 
++ [**Feature 1**](https://www.pivotaltracker.com/story/show/86688272): A User can 'Sign Up' with an email address and a General Medical Council (GMC) number. 
 + Feature 2: A User can 'Login' to a single chat room and exchange messsages with other users.
 + Feature 3: A User is presented with a *basic* mobile web app format - as sketched. [here](https://makerslightbox.mybalsamiq.com/projects/lightbox/lightbox%20app).
     
@@ -79,5 +79,8 @@ Having used Sinatra extensively for previous projects, the framework felt easy t
     
 ####Version 1 
     
-
-
+[**Feature 1**](https://www.pivotaltracker.com/story/show/86688272) - Building out our testing files (Feature, Acceptance & Integration tests). Building out our Views for Sign Up, Login and a Homepage. Creating routes between the View and the back end of the App. Initialise the database, and build a User Model to handle parameters send from the Front End. 
+    
+[**Feature 2**](https://www.pivotaltracker.com/story/show/86688958) - Building a new Feature test, and subsequent Acceptance and Integration tests. New View created for Chat Rooms & Websockets logic implemented. 
+    
+[**Feature 3**](https://www.pivotaltracker.com/story/show/86689228) - Basic HTML format and accompanying stylesheet. 
