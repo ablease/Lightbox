@@ -7,6 +7,7 @@ gem 'dm-postgres-adapter'
 gem 'bcrypt'
 gem 'foundation'
 gem 'em-websocket'
+gem 'mechanize'
 
 group :development, :test do
   gem 'capybara'
@@ -16,5 +17,4 @@ group :development, :test do
   gem 'launchy'
   gem 'shotgun'
   gem 'database_cleaner'
-  
 end
