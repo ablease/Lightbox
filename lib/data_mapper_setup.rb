@@ -2,13 +2,7 @@ require 'data_mapper'
 
 env = ENV['RACK_ENV'] || 'development'
 
-configure :production do
-  DataMapper.setup(:default, ENV['DATABASE_URL'])
-end
-
-configure :development, :test do
-  DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/lightbox_#{env}")
-end
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "postgres://localhost/lightbox_#{env}")
 
 require './lib/models/user'
 
