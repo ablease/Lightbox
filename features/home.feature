@@ -8,5 +8,4 @@ Feature: The homepage
       And I want to Sign Up
       When I press Sign Up
       Then I should be able to Sign Up
-
-     
+    

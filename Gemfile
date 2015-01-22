@@ -6,6 +6,7 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'bcrypt'
 gem 'foundation'
+gem 'em-websocket'
 
 group :development, :test do
   gem 'capybara'
