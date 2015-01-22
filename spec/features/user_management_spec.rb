@@ -37,3 +37,15 @@ feature "User Log In" do
   end
 end
 
+feature "User Log out" do 
+
+  # scenario "user clicks on log out button" do 
+  #   sign_up 
+  #   log_in("Test@test.com", "test")
+  #   click_link('Log out')
+  #   expect(page).to have_content("You have been logged out")
+  #   expect{ log_out }.to change(User, :count).by 1
+  # end
+
+end
+
