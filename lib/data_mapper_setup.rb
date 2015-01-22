@@ -1,6 +1,6 @@
 require 'data_mapper'
 
-env = ENV['Rack_Env'] || 'development'
+env = ENV['RACK_ENV'] || 'development'
 
 DataMapper.setup(:default, "postgres://localhost/lightbox_#{env}")
 

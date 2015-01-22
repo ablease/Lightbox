@@ -25,6 +25,7 @@ feature "User Log In" do
   end
 
   scenario 'with an email and password that do not match' do
+    sign_up
     log_in("Test@test.com", "wrongpass")
     expect(page).to have_content("The email or password are incorrect")
   end
