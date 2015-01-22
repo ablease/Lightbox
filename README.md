@@ -52,7 +52,7 @@ ________________________________________________________________________________
 #####Version 1: Skateboard
 
 + [**Feature 1**](https://www.pivotaltracker.com/story/show/86688272): A User can 'Sign Up' with an email address and a General Medical Council (GMC) number. 
-+ Feature 2: A User can 'Login' to a single chat room and exchange messsages with other users.
++ [**Feature 2**](https://www.pivotaltracker.com/story/show/86688958): A User can 'Login' to a single chat room and exchange messsages with other users.
 + Feature 3: A User is presented with a *basic* mobile web app format - as sketched. [here](https://makerslightbox.mybalsamiq.com/projects/lightbox/lightbox%20app).
     
 #####Version 2: Scooter
