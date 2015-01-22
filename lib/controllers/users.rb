@@ -14,7 +14,7 @@ class Lightbox < Sinatra::Base
       flash[:notice] = "Successfully signed up"
       redirect '/'
     else
-      flash[:notice] = "Your passwort doesn't match, please try again"
+      flash[:notice] = "Your password doesn't match, please try again"
       redirect '/sign_up'
     end
 
