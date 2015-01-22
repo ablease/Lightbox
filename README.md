@@ -1,8 +1,8 @@
 #Makers Academy Final Project: Lightbox
 ##A Secure Chat App for Doctors
 
-[![Test Coverage](to be added)](to be added)
-[![Code Climate](to be added)](to be added)
+[![Code Climate](https://codeclimate.com/github/ablease/Lightbox/badges/gpa.svg)](https://codeclimate.com/github/ablease/Lightbox)
+[![Test Coverage](https://codeclimate.com/github/ablease/Lightbox/badges/coverage.svg)](https://codeclimate.com/github/ablease/Lightbox)
 
 <p align="center"> <img src="http://www.gifss.com/profesiones/doctores/doctor-05.gif" /> </p>
 
