@@ -1,5 +1,21 @@
-<form action="/login" method='post'>
-  <input type='text' name='email' placeholder="Email">
-  <input type='password' name='password' placeholder='Password'>
-  <input type='submit' name='sign_up'  value="Log In">
+<form action="/sign_up" method='post'>
+  <div class="row">
+    <div class="large-4 columns">
+      <label>Email
+        <input type='email' name='email' placeholder="Email">
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+      <label>Password
+        <input type='text' name='password' placeholder='Password'>
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-4 columns">
+      <input type="submit" name="sign_in" value="Log In" class="button">
+    </div>
+  </div>
 </form>

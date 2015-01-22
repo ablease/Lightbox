@@ -1,9 +1,22 @@
-<% if current_user %>
-<p> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="css/foundation.css">
+    <title>Lightbox</title>
+  </head>
 
-<% if flash[:notice] %>
-<div id="notice"><%= flash[:notice] %></div>
-<% end %>
+  <body>
+  <div class="row">
+  <p>Lightbox</p>
+  </div>
+    <% if current_user %>
+      <p> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
+    <% end %>
 
-<%= yield %>
+    <% if flash[:notice] %>
+      <div id="notice"><%= flash[:notice] %></div>
+    <% end %>
+
+    <%= yield %>
+  </body>
+</html>
