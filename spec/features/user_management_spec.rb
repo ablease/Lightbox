@@ -46,4 +46,10 @@ feature "User Log In" do
     log_in("Test@test.com", "wrongpass")
     expect(page).to have_content("The email or password are incorrect")
   end
+
+  scenario 'on succesful login, user should see MDTs that they belongs to' do
+    sign_up
+    log_in("Test@test.com", "test")
+    expect(page).to have_content("London MDT")
+  end
 end

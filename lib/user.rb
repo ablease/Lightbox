@@ -9,7 +9,7 @@ class User
   property :email, String
   property :password_digest, Text
   property :phone, Integer
-  property :gmc_number, Integer
+  property :gmc_number, String
 
   def self.authenticate(email, password)
     user = first(:email => email)
@@ -25,10 +25,9 @@ class User
     self.password_digest = BCrypt::Password.create(password)
   end
 
-
-
   attr_reader :email
   attr_reader :password
+  attr_reader :gmc_number
   attr_accessor :password_confirmation
   validates_confirmation_of :password
   # validates_uniqueness_of :email
