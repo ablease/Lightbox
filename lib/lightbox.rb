@@ -14,8 +14,8 @@ class Lightbox < Sinatra::Base
   set :views, Proc.new { File.join(root, "/views") }
   use Rack::Flash
 
-  get '/mdts/london_mdt' do
-   erb :mdts
+  get '/chat_rooms/london_mdt' do
+   erb :chat_rooms
   end
 
   def current_user
