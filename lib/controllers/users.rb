@@ -38,6 +38,12 @@ class Lightbox < Sinatra::Base
     end
   end
 
+  delete '/login' do 
+    session.clear
+    flash[:notice] = ["Goodbye!"]
+    redirect to('/')
+  end
+
   def current_user
     @current_user ||= User.get(session[:user_id]) if session[:user_id]
   end

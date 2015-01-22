@@ -13,6 +13,7 @@ class Lightbox < Sinatra::Base
   set :root, File.dirname(__FILE__)
   set :views, Proc.new { File.join(root, "/views") }
   use Rack::Flash
+  use Rack::MethodOverride
 
   get '/chat_rooms/london_mdt' do
    erb :chat_rooms
