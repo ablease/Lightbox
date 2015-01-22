@@ -7,7 +7,7 @@ env = ENV['Rack_Env'] || 'development'
 
 DataMapper.setup(:default, "postgres://localhost/lightbox_#{env}")
 
-require './lib/user'
+require './lib/models/user'
 
 DataMapper.finalize
 
@@ -58,11 +58,17 @@ class Lightbox < Sinatra::Base
       redirect to('/login')
     end
   end
+  
+  get '/mdts/london_mdt' do
+   erb :mdts
+  end
 
   def current_user
     @current_user ||= User.get(session[:user_id]) if session[:user_id]
   end
-
+  
+  #Websockets server logic goes here
+  
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
