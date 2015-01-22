@@ -1,8 +1,11 @@
 ENV['RACK_ENV'] = 'test'
-require 'lightbox'
+
+require './lib/lightbox'
 require 'capybara/rspec'
 require 'database_cleaner'
 
+
+Capybara.app = Lightbox
 
 RSpec.configure do |config|
 
@@ -27,4 +30,3 @@ RSpec.configure do |config|
 end
 
 
-Capybara.app = Lightbox

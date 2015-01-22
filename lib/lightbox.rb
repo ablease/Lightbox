@@ -1,30 +1,29 @@
 require 'sinatra/base'
 require 'rack-flash'
-require 'data_mapper'
 require 'bcrypt'
 require 'em-websocket'
 
-env = ENV['Rack_Env'] || 'development'
+require_relative 'data_mapper_setup'
 
-DataMapper.setup(:default, "postgres://localhost/lightbox_#{env}")
+#DataMapper.setup(:default, "postgres://localhost/lightbox_#{env}")
 
-require './lib/models/user'
+#require './lib/models/user'
 
-DataMapper.finalize
+#DataMapper.finalize
 
-DataMapper.auto_upgrade!
+#DataMapper.auto_upgrade!
 
-EM.run do
-  class Lightbox < Sinatra::Base
 
-    enable :sessions
-    use Rack::Flash
+class Lightbox < Sinatra::Base
 
-    set :views, Proc.new { File.join(root,"..", "views") }
+  enable :sessions
+  use Rack::Flash
 
-    get '/' do
-      erb :index
-    end
+  set :views, Proc.new { File.join(root, "/views") }
+
+  get '/' do
+    erb :index
+  end
 
     get '/sign_up' do
       erb :sign_up
@@ -41,9 +40,9 @@ EM.run do
         redirect '/sign_up'
       end
 
-    end
+   end
 
-    get '/login' do
+   get '/login' do
       erb :login
     end
 
@@ -60,39 +59,17 @@ EM.run do
         redirect to('/login')
       end
     end
-    
-    get '/mdts/london_mdt' do
-     erb :mdts
-    end
-
-    def current_user
-      @current_user ||= User.get(session[:user_id]) if session[:user_id]
-    end
-    
-    #Websockets server logic goes here
-
-    @clients = []
-
-    EM::WebSocket.start(:host => '0.0.0.0', port => '3001') do |ws|
-      ws.onopen do |handshake|
-        @clients << ws
-        ws.send "Connected to #{handshake.path}."
-      end
-
-       ws.onclose do
-         ws.send "Closed."
-         @clients.delete ws
-       end
-
-       ws.onmessage do |msg|
-         puts "Received Message: #{msg}"
-         @clients.each do |socket|
-           socket.send msg
-         end
-       end
+   
+  get '/mdts/london_mdt' do
+   erb :mdts
   end
+
+  def current_user
+    @current_user ||= User.get(session[:user_id]) if session[:user_id]
+  end
+    
+
      
     # start the server if ruby file executed directly
     run! if app_file == $0
-  end
 end
