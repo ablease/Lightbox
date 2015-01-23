@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.1.2'
 
 gem 'sinatra'
 gem 'sinatra-rocketio', '~> 0.3.3'
@@ -9,6 +10,7 @@ gem 'bcrypt'
 gem 'foundation'
 gem 'em-websocket'
 gem 'mechanize'
+gem 'pg'
 
 group :development, :test do
   gem 'capybara'
@@ -19,3 +21,6 @@ group :development, :test do
   gem 'shotgun'
   gem 'database_cleaner'
 end
+
+gem "codeclimate-test-reporter", group: :test, require: nil
+

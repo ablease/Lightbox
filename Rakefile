@@ -1,6 +1,8 @@
 require 'data_mapper'
 require './lib/data_mapper_setup'
 
+ENV['CODECLIMATE_REPO_TOKEN']
+
 task :auto_upgrade do 
 	DataMapper.auto_upgrade!
 	puts "Auto upgrade complete"
