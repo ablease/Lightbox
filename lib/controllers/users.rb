@@ -74,7 +74,6 @@ class Lightbox < Sinatra::Base
 
     puts page.body
 
-
 # Sorry but we cannot find a record that matches your search.
 
   end
