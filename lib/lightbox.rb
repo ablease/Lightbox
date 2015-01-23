@@ -10,10 +10,7 @@ require_relative 'controllers/rooms'
 require_relative 'controllers/sockets'
 require_relative 'data_mapper_setup'
 
-
-
 class Lightbox < Sinatra::Base
-
 
   enable :sessions
   set :root, File.dirname(__FILE__)
