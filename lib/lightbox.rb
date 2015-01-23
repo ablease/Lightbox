@@ -16,7 +16,7 @@ class Lightbox < Sinatra::Base
   use Rack::Flash
   use Rack::MethodOverride
 
-  get '/chat_rooms/london_mdt' do
+  get '/chat_room/london_mdt' do
    erb :chat_rooms
   end
 
