@@ -11,6 +11,7 @@ gem 'foundation'
 gem 'em-websocket'
 gem 'pg'
 gem 'mechanize'
+gem 'selenium-webdriver'
 
 group :development, :test do
   gem 'capybara'
@@ -23,4 +24,3 @@ group :development, :test do
 end
 
 gem "codeclimate-test-reporter", group: :test, require: nil
-
