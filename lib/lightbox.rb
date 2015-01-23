@@ -6,7 +6,9 @@ require 'em-websocket'
 
 require_relative 'controllers/application'
 require_relative 'controllers/users'
+require_relative 'controllers/rooms'
 require_relative 'data_mapper_setup'
+
 
 class Lightbox < Sinatra::Base
   register Sinatra::RocketIO
@@ -41,10 +43,6 @@ class Lightbox < Sinatra::Base
 
   io.on :error do |err|
     STDERR.puts "error!! #{err}"
-  end
-
-  get '/chat_room/london_mdt' do
-   erb :chat_rooms
   end
 
   # start the server if ruby file executed directly
