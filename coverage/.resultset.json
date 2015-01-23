@@ -129,7 +129,8 @@
         null,
         1,
         null,
-        1
+        1,
+        null
       ],
       "/Users/Alex/Projects/lightbox/lib/models/user.rb": [
         1,
@@ -170,6 +171,6 @@
         null
       ]
     },
-    "timestamp": 1422015627
+    "timestamp": 1422015997
   }
 }
