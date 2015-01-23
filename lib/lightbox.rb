@@ -1,5 +1,5 @@
 require 'sinatra/base'
-require 'sinatra-rocketio'
+require 'sinatra/rocketio'
 require 'rack-flash'
 require 'bcrypt'
 require 'em-websocket'
