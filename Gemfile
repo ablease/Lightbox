@@ -6,12 +6,11 @@ gem 'sinatra-rocketio', '~> 0.3.3'
 gem 'rack-flash3'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
-gem 'sinatra'
 gem 'bcrypt'
-gem 'rack-flash3'
 gem 'foundation'
 gem 'em-websocket'
 gem 'pg'
+gem 'mechanize'
 
 group :development, :test do
   gem 'capybara'
@@ -21,7 +20,6 @@ group :development, :test do
   gem 'launchy'
   gem 'shotgun'
   gem 'database_cleaner'
-  
 end
 
 gem "codeclimate-test-reporter", group: :test, require: nil
