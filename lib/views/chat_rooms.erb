@@ -1,7 +1,10 @@
 <h1>You are now chatting in London MDT</h1>
+<script>
+  var channel = "#{@channel}";
+</script>
 <script type="text/javascript", src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script type="text/javascript", src="rocketio_js"></script>
-<script type="text/javascript", src="js/chat.js"></script>
+<script src="<%= rocketio_js %>"></script>
+<script type="text/javascript", src="/js/chat.js"></script>
 
 <div id="content">
   <div id="header">
@@ -11,5 +14,5 @@
     <input type="text" id="name">
     <input type="text" id="message">
     <input type="button" id="btn_send" value="post">
+    <ul id="timeline"></ul>
   </div>
-  <ul id="timeline"></ul>

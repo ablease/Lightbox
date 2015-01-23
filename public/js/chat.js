@@ -1,5 +1,7 @@
 var io = new RocketIO({channel: channel}).connect();
 
+//@channel is passed in from get requesets to /chat/:channel
+//
 $(function(){
   $("#chat #btn_send").click(post);
   $("#chat #message").keydown(function(e){
@@ -8,7 +10,7 @@ $(function(){
 });
 
 io.on("chat", function(data){
-  var m = $("<li>").text(data.name + " : " +data.message);
+  var m = $("<li>").text(data.name + " HEY: " +data.message);
   $("#chat #timeline").prepend(m);
 });
 
