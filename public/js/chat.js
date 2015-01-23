@@ -4,14 +4,14 @@ var io = new RocketIO({channel: channel}).connect();
 //
 $(function(){
   $("#chat #btn_send").click(post);
-//  $("#chat #message").keydown(function(e){
-//    if(e.keyCode == 13) post();
-//  });
+  $("#chat #message").keydown(function(e){
+    if(e.keyCode == 13) post();
+  });
 });
 
 io.on("chat", function(data){
   var m = $("<li>").text(data.name + " HEY: " +data.message);
-  $("#chat #timeline").prepend(m);
+  $("#chat #timeline").append(m);
 });
 
 io.on("connect", function(){
