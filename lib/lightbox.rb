@@ -6,8 +6,8 @@ require 'em-websocket'
 
 require_relative 'controllers/application'
 require_relative 'controllers/users'
-require_relative 'controllers/rooms'
 require_relative 'controllers/sockets'
+require_relative 'controllers/rooms'
 require_relative 'data_mapper_setup'
 
 class Lightbox < Sinatra::Base
