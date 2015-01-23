@@ -8,6 +8,7 @@ class Lightbox < Sinatra::Base
   end
 
   post '/sign_up' do
+    verify_gmc(params[:gmc_number], params[:name])
     @new_user = User.create(name: params["name"],
                             email: params["email"],
                             password: params["password"],
@@ -15,7 +16,6 @@ class Lightbox < Sinatra::Base
                             gmc_number: params["1234567"])
     if 	@new_user.save
       session[:user_id] = @new_user.id
-      verify_gmc(params["1234567"])
       flash[:notice] = "Successfully signed up"
       redirect '/'
     else
@@ -53,62 +53,47 @@ class Lightbox < Sinatra::Base
     @current_user ||= User.get(session[:user_id]) if session[:user_id]
   end
 
-  def verify_gmc(gmc_numb)
+  def verify_gmc(gmc_numb, doc_name)
+
+    gmc_number_search = gmc_numb
 
     driver = Selenium::WebDriver.for :firefox
+    wait = Selenium::WebDriver::Wait.new(:timeout => 15) # seconds
+
     driver.navigate.to "http://webcache.gmc-uk.org/gmclrmp_enu/start.swe"
 
 
-    # wait = Selenium::WebDriver::Wait.new(:timeout => 10) # seconds
 
-    # frame11= driver.find_element(:name, "_sweclient")
 
     driver.switch_to.frame "_sweclient"
 
     driver.switch_to.frame "_sweview"
 
-    # driver.switch_to.frame(driver.find_element(:name, "_sweclient"))
-
-
-    puts '______________'
-    # wait.until { driver.find_element(:id => "gmcrefnumber") }
-
     element = driver.find_element(:id, "gmcrefnumber")
-    element.send_keys "2575276"
+    element.send_keys gmc_number_search
     driver.find_element(:id, "s_3_1_7_0").click
 
-    # puts __________________
-    # puts element.text
+    wait.until{ driver.title == "List of Registered Medical Practitioners | Doctor Details" || "List of Registered Medical Practitioners | Search Results"}
+
+    if driver.title == "List of Registered Medical Practitioners | Search Results"
+      flash[:notice] = "Your GMC number is wrong"
+      redirect '/sign_up'
+    end
 
 
+    first_name = driver.find_element(:id => "s_2_1_29_0")
+    second_name = driver.find_element(:id => "s_2_1_28_0")
 
+    puts first_name.text + ' ' + second_name.text
 
+    unless first_name.text + ' ' + second_name.text == doc_name
+      flash[:notice] = "Your name doesn't match your GMC-Number, please try again"
+      redirect '/sign_up'
+    else
+      puts 'success'
+    end
 
-
-
-    # ____________________________________________
-
-    # agent = Mechanize.new
-    #
-    # page  = agent.get 'http://webcache.gmc-uk.org/gmclrmp_enu/start.swe'
-    #
-    # form            = page.form_with(:action => "/gmclrmp_enu/start.swe")
-    # form_text       = form.field_with(:id => 'gmcrefnumber')
-    #     puts form_text
-    # # form_text.value = '1234567'
-    # button          = form.button_with(:value => 'Search')
-    #
-    # agent.submit(form, form_text, button)
-    #
-    # puts '======================='
-    #
-    # puts form.inspect
-    #
-    # puts '======================='
-    #
-    # puts page.body
-
-# Sorry but we cannot find a record that matches your search.
+    driver.quit
 
   end
 
