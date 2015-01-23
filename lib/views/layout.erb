@@ -12,17 +12,6 @@
         <p>Lightbox</p>
       </div>
     </div>
-      <% if current_user %>
-      <p> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
-      <a href="/chat_room/london_mdt" id="london_mdt">London MDT</a>
-      <% end %>
-
-      <% if current_user %>
-        <form method="post" action="/login" >
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" value="Log out">
-        </form>
-      <% end %>
 
       <% if flash[:notice] %>
       <div id="notice"><%= flash[:notice] %></div>
