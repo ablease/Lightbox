@@ -1,68 +1,15 @@
 <h1>You are now chatting in London MDT</h1>
-<!-- WebSockets Chat App -->
-<div id="chat-log">
+<script type="text/javascript", src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript", src="rocketio_js"></script>
+<script type="text/javascript", src="js/chat.js"></script>
 
-  <input type="text" id="message">
-  <button id="disconnect">Disconnect</button>
-
-
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script>
-function addMessage(msg) {
-  $("#chat-log").append("" + msg + "");
-}
-var socket, host;
-host = "ws://localhost:3001";
-
-function connect() {
-  try {
-    socket = new WebSocket(host);
-
-    addMessage("Socket State: " + socket.readyState);
-
-    socket.onopen = function() {
-      addMessage("Socket Status: " + socket.readyState + " (open)");
-    }
-
-    socket.onclose = function() {
-      addMessage("Socket Status: " + socket.readyState + " (closed)");
-    }
-
-    socket.onmessage = function(msg) {
-      addMessage("Received: " + msg.data);
-    }
-  } catch(exception) {
-    addMessage("Error: " + exception);
-  }
-}
-
-$(function() {
-  connect();
-});
-
-function send() {
-  var text = $("#message").val();
-  if (text == '') {
-    addMessage("Please Enter a Message");
-    return;
-  }
-
-  try {
-    socket.send(text);
-    addMessage("Sent: " + text)
-  } catch(exception) {
-    addMessage("Failed To Send")
-  }
-
-  $("#message").val('');
-}
-
-$('#message').keypress(function(event) {
-  if (event.keyCode == '13') { send(); }
-});
-
-$("#disconnect").click(function() {
-  socket.close()
-});
-</script>
+<div id="content">
+  <div id="header">
+    <h1> You are in a chat room </h1>
+  </div>
+  <div id="chat">
+    <input type="text" id="name">
+    <input type="text" id="message">
+    <input type="button" id="btn_send" value="post">
+  </div>
+  <ul id="timeline"></ul>
