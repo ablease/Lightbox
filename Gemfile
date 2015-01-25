@@ -10,6 +10,7 @@ gem 'bcrypt'
 gem 'foundation'
 gem 'em-websocket'
 gem 'pg'
+gem 'puma'
 
 group :development, :test do
   gem 'capybara'
