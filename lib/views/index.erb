@@ -1,16 +1,19 @@
 <% if current_user %>
 
-<p> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
-<ul>
+<div class="welcome">
+  <p id='welcomeMessage'> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
+</div>
+
+<ul class="mdtList">
   <% @rooms.each do | room | %>
   <li><a href="<%= room.url %>"><%= room.title %></a> </li>
   <%end%>
 </ul>
 
 <div id="new-room">
-  <form action="new_room" method="post">
-    Title: <input type="text" name="title">
-    <input type="submit" value="Add Room">
+  <form action="new_room" method="post" id="new_room">
+    <input type="text" name="title" value="Type in room name">
+    <input type="submit" value="Add Room" class='button' id="addRoomButton">
   </form>
 </div>
 
