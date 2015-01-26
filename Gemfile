@@ -21,5 +21,9 @@ group :development, :test do
   
 end
 
+group :production do
+  gem 'pg'
+end
+
 gem "codeclimate-test-reporter", group: :test, require: nil
 
