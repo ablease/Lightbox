@@ -1,0 +1,122 @@
+/*@import url(http://fonts.googleapis.com/css?family=Stalemate);*/
+
+/* Layout.erb Styling */
+.frame {
+	position: relative;
+	height: 98%;
+	width: 80% ;
+	margin-left: 10%;
+}
+
+.banner {
+	border-radius: 5%;
+	position: relative;
+	margin-top: 1%;
+	height: 30%;
+	width: 98%;
+	margin-left: 1%;
+}
+
+.contents {
+	border-radius: 5%;
+	position: relative;
+	margin-top: 1%;
+	height: 68%;
+	width: 98%;
+	margin-left: 1%;
+}
+
+div #titleContainer {
+	position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#title {
+	font-family: 'Stalemate', cursive;
+	font-size: 80px;
+	width: 100%;
+	text-align: center;
+}
+
+
+
+/* Index.erb Styling */
+#btnContainer {
+	position: relative;
+	margin-top: 40%;
+}
+
+#btn {
+  background: #111111;
+  border: solid black;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+#btnRed {
+	background: #111111;
+  border: solid red;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+/* Login.erb Styling */
+#loginForm {
+	margin-top: 0.4%;
+	border: solid black;
+
+}
+
+.lginLabel {
+	font-family: Arial;
+}
+
+.loginGParent {
+	position: relative;
+}
+
+#loginParent {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#loginBtn {
+	position: relative;
+	background: #111111;
+  border: solid black;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: 30%;
+  text-align: center;
+}
+
+
+
+/* Sign_up.erb Styling */
+
+
+
+
+
+
