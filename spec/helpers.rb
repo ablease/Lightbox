@@ -15,3 +15,10 @@ def log_in(email, password)
   click_button 'Log In'
 end
 
+def add_room(title, url)
+  within('#new-room') do 
+    fill_in 'title', :with => title
+    fill_in 'url', :with => url
+    click_button 'Add Room'
+  end
+end
