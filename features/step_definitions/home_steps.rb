@@ -1,3 +1,7 @@
+Given(/^I am on the homepage$/) do
+  visit('/')
+end
+
 Given(/^I want to Sign Up$/) do
   visit('/')
 end

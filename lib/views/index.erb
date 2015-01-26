@@ -1,12 +1,23 @@
 <% if current_user %>
 
-  <p> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
-  <a href="/chat_room/london_mdt" id="london_mdt">London MDT</a>
+<p> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
+<ul>
+  <% @rooms.each do | room | %>
+  <li><a href="<%= room.url %>"><%= room.title %></a> </li>
+  <%end%>
+</ul>
 
-    <form method="post" action="/login" >
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Log out">
-    </form>
+<div id="new-room">
+  <form action="new_room" method="post">
+    Title: <input type="text" name="title">
+    <input type="submit" value="Add Room">
+  </form>
+</div>
+
+<form method="post" action="/login" >
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Log out">
+</form>
 
 <% else %>
   
