@@ -9,6 +9,7 @@ gem 'bcrypt'
 gem 'foundation'
 gem 'pg'
 gem 'puma'
+gem 'unicorn'
 
 group :development, :test do
   gem 'capybara'
