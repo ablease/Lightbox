@@ -5,4 +5,6 @@ class Room
   property :title, String
   property :url, String
 
+  attr_reader :title
+
 end

@@ -6,6 +6,13 @@
   <%end%>
 </ul>
 
+<div id="new-room">
+  <form action="new_room" method="post">
+    Title: <input type="text" name="title">
+    <input type="submit" value="Add Room">
+  </form>
+</div>
+
   <form method="post" action="/login" >
     <input type="hidden" name="_method" value="delete">
     <input type="submit" value="Log out">

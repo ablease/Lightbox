@@ -30,10 +30,11 @@ feature "User Log In" do
     expect(page).to have_content("The email or password are incorrect")
   end
 
-  scenario 'on succesful login, user should see MDTs that they belongs to' do
+  scenario 'on succesful login, user should see MDTs that they belong to' do
     sign_up
     log_in("Test@test.com", "test")
-    expect(page).to have_content("London MDT")
+    add_room("London")
+    expect(page).to have_content("London")
   end
 end
 

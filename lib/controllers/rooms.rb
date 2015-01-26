@@ -1,6 +1,6 @@
 class Lightbox < Sinatra::Base
 
-  get '/chat_room/london_mdt' do
+  get '/chat_room/*' do
    erb :chat_rooms
   end
 
@@ -8,5 +8,12 @@ class Lightbox < Sinatra::Base
     content_type :js
     @scheme = ENV['RACK_ENV'] == "production" ? "wss://" : "ws://"
     erb :"application.js", :layout => false
+  end
+
+  post "/new_room" do 
+    title = params["title"]
+    url = "/chat_room/" + params["title"]
+    Room.create(:url => title, :title => title)
+    redirect to('/')
   end
 end
