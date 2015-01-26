@@ -1,14 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'sinatra'
-gem 'sinatra-rocketio', '~> 0.3.3'
+gem 'faye-websocket'
 gem 'rack-flash3'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'bcrypt'
 gem 'foundation'
-gem 'em-websocket'
 gem 'pg'
+gem 'puma'
 
 group :development, :test do
   gem 'capybara'
