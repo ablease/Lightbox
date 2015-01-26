@@ -1,7 +1,7 @@
 Feature: Signing up
 	As a Doctor
 	I want to sign up to Lightbox
-	In order to communicate with mt MDT
+	In order to communicate with my MDT
 
 	Scenario: Filling the form
 		Given I have entered my name

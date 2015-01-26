@@ -1,9 +1,0 @@
-<% if current_user %>
-<p> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
-<% end %>
-
-<% if flash[:notice] %>
-<div id="notice"><%= flash[:notice] %></div>
-<% end %>
-
-<%= yield %>

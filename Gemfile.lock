@@ -12,6 +12,7 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+<<<<<<< HEAD
     chunky_png (1.3.3)
     compass (1.0.3)
       chunky_png (~> 1.2)
@@ -25,6 +26,10 @@ GEM
       sass (>= 3.3.0, < 3.5)
     compass-import-once (1.0.5)
       sass (>= 3.2, < 3.5)
+=======
+    codeclimate-test-reporter (0.4.6)
+      simplecov (>= 0.7.1, < 1.0.0)
+>>>>>>> ae5496b057b2a99380c85004151d28750648f7ee
     cucumber (1.3.18)
       builder (>= 2.1.2)
       diff-lcs (>= 1.1.3)
@@ -83,9 +88,17 @@ GEM
       dm-core (~> 1.2.0)
     do_postgres (0.10.14)
       data_objects (= 0.10.14)
+    docile (1.1.5)
+    eventmachine (1.0.4)
     extlib (0.9.16)
     fastercsv (1.5.5)
+<<<<<<< HEAD
     ffi (1.9.6)
+=======
+    faye-websocket (0.9.2)
+      eventmachine (>= 0.12.0)
+      websocket-driver (>= 0.5.1)
+>>>>>>> ae5496b057b2a99380c85004151d28750648f7ee
     foundation (1.0.4)
       thor (>= 0.18.1)
     gherkin (2.12.2)
@@ -101,6 +114,9 @@ GEM
     multi_test (0.1.1)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
+    pg (0.17.1)
+    puma (2.11.0)
+      rack (>= 1.1, < 2.0)
     rack (1.6.0)
     rack-flash3 (1.0.5)
       rack
@@ -126,6 +142,11 @@ GEM
     sass (3.4.9)
     shotgun (0.9)
       rack (>= 1.0)
+    simplecov (0.9.1)
+      docile (~> 1.1.0)
+      multi_json (~> 1.0)
+      simplecov-html (~> 0.8.0)
+    simplecov-html (0.8.0)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -138,6 +159,9 @@ GEM
     thor (0.19.1)
     tilt (1.4.1)
     uuidtools (2.1.5)
+    websocket-driver (0.5.1)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.1)
     xpath (2.0.0)
       nokogiri (~> 1.3)
 
@@ -147,14 +171,21 @@ PLATFORMS
 DEPENDENCIES
   bcrypt
   capybara
+<<<<<<< HEAD
   compass
+=======
+  codeclimate-test-reporter
+>>>>>>> ae5496b057b2a99380c85004151d28750648f7ee
   cucumber
   cucumber-sinatra
   data_mapper
   database_cleaner
   dm-postgres-adapter
+  faye-websocket
   foundation
   launchy
+  pg
+  puma
   rack-flash3
   rspec
   sass

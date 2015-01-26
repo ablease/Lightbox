@@ -1,8 +1,14 @@
+require "codeclimate-test-reporter"
+CodeClimate::TestReporter.start
+
 ENV['RACK_ENV'] = 'test'
-require 'lightbox'
+
+require './lib/lightbox'
 require 'capybara/rspec'
 require 'database_cleaner'
 
+
+Capybara.app = Lightbox
 
 RSpec.configure do |config|
 
@@ -12,8 +18,8 @@ RSpec.configure do |config|
   config.order = 'random'
 
   config.before(:suite) do
-  DatabaseCleaner.strategy = :truncation
-  DatabaseCleaner.clean_with(:truncation)
+    DatabaseCleaner.strategy = :transaction
+    DatabaseCleaner.clean_with :truncation
   end
 
   config.before(:each) do
@@ -27,4 +33,3 @@ RSpec.configure do |config|
 end
 
 
-Capybara.app = Lightbox
