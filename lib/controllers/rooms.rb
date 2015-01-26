@@ -17,4 +17,10 @@ class Lightbox < Sinatra::Base
     Room.create(:url => url, :title => title)
     redirect to('/')
   end
+
+  delete "/" do
+    Room.destroy
+    flash[:notice] = ["Room deleted sucessfully"]
+    redirect to ('/') 
+  end
 end

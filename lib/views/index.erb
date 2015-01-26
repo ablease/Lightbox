@@ -2,7 +2,13 @@
 <p> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
 <ul>
   <% @rooms.each do | room | %>
-  <li><a href="<%= room.url %>"><%= room.title %></a> </li>
+  <li>
+    <a href="<%= room.url %>"><%= room.title %></a> 
+    <form method"post" action="/">
+      <input name="_method" type="hidden" value="delete"> 
+      <input type="submit" value="Delete">
+    </form>
+   </li>
   <%end%>
 </ul>
 
