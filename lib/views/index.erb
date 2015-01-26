@@ -1,16 +1,20 @@
 <% if current_user %>
-<p> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
-<a href="/chat_room/london_mdt" id="london_mdt">London MDT</a>
 
-  <form method="post" action="/login" >
-    <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Log out">
-  </form>
+  <p> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
+  <a href="/chat_room/london_mdt" id="london_mdt">London MDT</a>
+
+    <form method="post" action="/login" >
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Log out">
+    </form>
+
 <% else %>
+  
   <div class="row">
-    <div class="large-4 large-offset-4 columns">
-      <a href="/login" class="button expand">Log In</a>
-      <a href="/sign_up" class="button expand">Sign Up</a>
+    <div class="large-4 large-offset-4 columns" id="btnContainer">
+      <a href="/login" class="button expand" id='btn'>Log In</a>
+      <a href="/sign_up" class="button expand" id='btn'>Sign Up</a>
     </div>
   </div>
+
 <% end %>
