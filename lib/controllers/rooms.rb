@@ -8,7 +8,6 @@ class Lightbox < Sinatra::Base
 
   get '/chat_room/*' do
     @name = params[:splat]
-    p params[:splat]
     erb :chat_rooms
   end
 
