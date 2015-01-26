@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
 
 gem 'sinatra'
 gem 'faye-websocket'
@@ -10,6 +9,8 @@ gem 'bcrypt'
 gem 'foundation'
 gem 'pg'
 gem 'puma'
+gem 'unicorn'
+gem 'passenger'
 
 group :development, :test do
   gem 'capybara'
@@ -20,6 +21,10 @@ group :development, :test do
   gem 'shotgun'
   gem 'database_cleaner'
   
+end
+
+group :production do
+  gem 'pg'
 end
 
 gem "codeclimate-test-reporter", group: :test, require: nil
