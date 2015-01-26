@@ -8,12 +8,15 @@ class Lightbox < Sinatra::Base
   end
 
   post '/sign_up' do
+    puts params.inspect
     verify_gmc(params[:gmc_number], params[:name])
-    @new_user = User.create(name: params["name"],
-                            email: params["email"],
-                            password: params["password"],
-                            password_confirmation: params["password_confirmation"],
-                            gmc_number: params["1234567"])
+    @new_user = User.create!(name: params[:name],
+                            email: params[:email],
+                            rsa_pu_kay: params[:genratepub_kay],
+                            password: params[:password],
+                            password_confirmation: params[:password_confirmation],
+                            gmc_number: params[:gmc_number]
+                            )
     if 	@new_user.save
       session[:user_id] = @new_user.id
       flash[:notice] = "Successfully signed up"
