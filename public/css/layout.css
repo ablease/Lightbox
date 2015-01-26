@@ -74,6 +74,76 @@ div #titleContainer {
   margin-left: auto;
 }
 
+.welcome {
+	position: relative;
+	/*border: solid black;*/
+	margin-top: -20%;
+	background-color: #efefef;
+}
+
+#welcomeMessage {
+	font-size: 12px;	
+}
+
+.mdtList {
+	list-style-type: none;
+	margin-left: 0%;
+	margin-top: 20%;
+	border-left: solid grey;
+	border-right: solid grey;
+	overflow-y: scroll;
+	max-height: 40%
+}
+
+.mdtList li {
+	font: 80 20px/1.5 Helvetica, Verdana, sans-serif;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+}
+
+.mdtList li:last-child {
+	border: none;
+}
+
+.mdtList li a {
+	text-decoration: none;
+	/*color: #000;*/
+	display: block;
+	width: 100%;
+	-webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.mdtList li a:hover {
+	font-size: 30px;
+	background: #f6f6f6;
+}
+
+#new_room {
+	/*border: solid black;*/
+	position: relative;
+}
+
+#addRoomButton {
+	position: relative;
+	background: #111111;
+  border: solid black;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: 20%;
+  margin-top: 0%;
+  text-align: center;	
+}
+
+
 
 /* Login.erb Styling */
 #loginForm {
