@@ -4,7 +4,7 @@ require 'helpers'
 feature "User browses a list of chat rooms" do
   before(:each) {
     Room.create(:title => "London MDT",
-                :url => "/chat_romm/london_mdt")
+                :url => "/chat_room/london_mdt")
   }
 
   scenario "when opening the homepage" do 
