@@ -42,6 +42,12 @@ div #titleContainer {
 
 
 /* Index.erb Styling */
+
+.topBar {
+	position: fixed;
+	margin-top: -20%;
+}
+
 #btnContainer {
 	position: relative;
 	margin-top: 40%;
