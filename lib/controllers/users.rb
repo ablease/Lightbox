@@ -78,6 +78,7 @@ class Lightbox < Sinatra::Base
     if driver.title == "List of Registered Medical Practitioners | Search Results"
       flash[:notice] = "Your GMC number is wrong"
       redirect '/sign_up'
+      return
     end
 
 
@@ -89,6 +90,7 @@ class Lightbox < Sinatra::Base
     unless first_name.text + ' ' + second_name.text == doc_name
       flash[:notice] = "Your name doesn't match your GMC-Number, please try again"
       redirect '/sign_up'
+      return
     else
       puts 'success'
     end
