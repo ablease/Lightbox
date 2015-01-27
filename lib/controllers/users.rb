@@ -1,3 +1,5 @@
+require "json"
+
 class Lightbox < Sinatra::Base
 
   get '/sign_up' do
@@ -5,10 +7,14 @@ class Lightbox < Sinatra::Base
   end
 
   post '/sign_up' do
+    verify_gmc(params["gmc_number"], params["name"])
+
     @new_user = User.create(name: params["name"], 
                             email: params["email"], 
                             password: params["password"], 
-                            password_confirmation: params["password_confirmation"])
+                            password_confirmation: params["password_confirmation"],
+                            gmc_number: params["gmc_number"])
+
     if 	@new_user.save
       session[:user_id] = @new_user.id
       flash[:notice] = "Successfully signed up"
@@ -19,6 +25,32 @@ class Lightbox < Sinatra::Base
     end
 
   end
+
+  def verify_gmc(number, name) 
+    json = File.read("api/doctors.json")
+    doctors = JSON.parse(json)
+
+    if valid_gmc?(number)
+      if check_doctor_name(number, name)  return "Valid GMC number"
+      else return "Doctor's name does not match that GMC number" 
+      end
+      return "Not valid number"
+    end 
+  end
+
+  def valid_gmc?(number) 
+    json = File.read("api/doctors.json")
+    doctors = JSON.parse(json)
+    if doctors[number] != nil
+    end
+  end
+
+  def check_doctor_name(number, name)
+    if doctors[number][name] == params["name"]
+    end
+  end
+
+
 
   get '/login' do
     erb :login
