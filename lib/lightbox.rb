@@ -18,6 +18,14 @@ class Lightbox < Sinatra::Base
   use Rack::MethodOverride
 
 
+  delete '/chat_room/:id' do |id|
+    puts id
+    room = Room.get!(id)
+    p room
+    room.destroy!
+    flash[:notice] = ["Room deleted sucessfully"]
+    redirect to ('/') 
+  end
   # start the server if ruby file executed directly
   run! if app_file == $0
 end

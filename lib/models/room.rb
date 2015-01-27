@@ -6,5 +6,6 @@ class Room
   property :url, String
 
   attr_reader :title
+  attr_accessor :id
 
 end
