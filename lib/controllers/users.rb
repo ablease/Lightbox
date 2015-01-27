@@ -1,4 +1,6 @@
 require "selenium-webdriver"
+require 'json'
+
 
 
 class Lightbox < Sinatra::Base
@@ -12,7 +14,7 @@ class Lightbox < Sinatra::Base
     verify_gmc(params[:gmc_number], params[:name])
     @new_user = User.create!(name: params[:name],
                             email: params[:email],
-                            rsa_pu_kay: params[:genratepub_kay],
+                            rsakeypub: params[:genratepub_kay],
                             password: params[:password],
                             password_confirmation: params[:password_confirmation],
                             gmc_number: params[:gmc_number]
@@ -51,6 +53,31 @@ class Lightbox < Sinatra::Base
     flash[:notice] = ["Goodbye!"]
     redirect to('/')
   end
+
+  get '/pub_keys' do
+    user= []
+
+    User.each do |user_add|
+      user_to_add = { "email: " + user_add.email => "rsakeypub: " + user_add.rsakeypub }
+
+      user << user_to_add
+
+    end
+    user.to_json
+
+  end
+
+  get '/current_users' do
+    puts Sockets.current_user_count
+
+  end
+
+
+
+
+
+
+
 
   def current_user
     @current_user ||= User.get(session[:user_id]) if session[:user_id]

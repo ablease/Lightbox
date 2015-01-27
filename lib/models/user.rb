@@ -7,10 +7,10 @@ class User
   property :id, Serial
   property :name, String
   property :email, String
-  property :password_digest, Text
+  property :password_digest, String, length: 180
   property :phone, Integer
   property :gmc_number, String
-  property :rsa_pu_kay, Text
+  property :rsakeypub, String, length: 180
 
   def self.authenticate(email, password)
     user = first(:email => email)

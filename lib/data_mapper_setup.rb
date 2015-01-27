@@ -8,4 +8,4 @@ require './lib/models/user'
 
 DataMapper.finalize
 
-DataMapper.auto_migrate!
+DataMapper.auto_upgrade!

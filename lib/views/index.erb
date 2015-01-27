@@ -1,6 +1,6 @@
 <% if current_user %>
 <p> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
-<p> Your encryption key <%= current_user.rsa_pu_kay %></p>
+<p> Your encryption key <%= current_user.rsakeypub %></p>
 
 <a href="/chat_room/london_mdt" id="london_mdt">London MDT</a>
 
