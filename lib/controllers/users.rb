@@ -1,5 +1,5 @@
 require "selenium-webdriver"
-
+require 'capybara-webkit'
 
 class Lightbox < Sinatra::Base
 
@@ -57,13 +57,12 @@ class Lightbox < Sinatra::Base
 
     gmc_number_search = gmc_numb
 
+#    driver = Selenium::WebDriver.for :remote, :url => "http://webcache.gmc-uk.org/gmclrmp_enu/start.swe", :desired_capabilities => :htmlunit
+
     driver = Selenium::WebDriver.for :firefox
     wait = Selenium::WebDriver::Wait.new(:timeout => 15) # seconds
 
     driver.navigate.to "http://webcache.gmc-uk.org/gmclrmp_enu/start.swe"
-
-
-
 
     driver.switch_to.frame "_sweclient"
 
