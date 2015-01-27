@@ -1,5 +1,11 @@
 /* Index.erb Styling */
 
+#indexBody {
+	position: relative;
+	border: solid black;
+	margin-bottom: 10%
+}
+
 .topBar {
 	position: fixed;
 	margin-top: -20%;
@@ -48,6 +54,14 @@
 	font-size: 12px;	
 }
 
+#mdtListContainer {
+	position: relative;
+	border: solid black;
+	margin-top: 1%;
+	height: 70%;
+	padding: 0;
+}
+
 .mdtList {
 	list-style-type: none;
 	margin-left: 0%;
@@ -70,12 +84,6 @@
 	border-bottom: none;
 	text-align: left;
 }
-
-/*.right {
-	text-align: right;
-	float: right;
-	margin-right: 5%;
-}*/
 
 .mdtList li:last-child {
 	border: none;
@@ -109,6 +117,9 @@
 #new_room {
 	/*border: solid black;*/
 	position: relative;
+	margin-bottom: 5%;
+	margin-top: 1%;
+	text-align: center;
 }
 
 #addRoomButton {
@@ -121,16 +132,18 @@
   font-size: 20px;
   padding: 10px 20px 10px 20px;
   text-decoration: none;
+  margin-left: auto;
   margin-right: auto;
-  margin-left: 20%;
   margin-top: 0%;
   text-align: center;	
+  /*left: 40%;*/
 }
 
 .navBar {
 	background-color: black;
 	display: block;
 	font: white;
+	height: 10%;
 }
 
 .navigation {

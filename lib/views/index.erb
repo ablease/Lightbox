@@ -1,3 +1,6 @@
+
+<!-- <div id="indexBody"> -->
+
 <% if current_user %>
 
 <nav class='navBar'>
@@ -20,21 +23,23 @@
   <p id='welcomeMessage'> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
 </div> -->
 
-<ul class="mdtList">
-  <% @rooms.each do | room | %>
-  <li>
-    <ul>
-      <li><a href="<%= room.url %>"><%= room.title %></a></li> 
-      <li class="right">
-        <form method="post" action="/chat_room/<%= room.id %>">
-          <input type="hidden" name="_method" value="delete">
-          <input type="submit" style='{font-family:foundation-icons; font-size:20px}' value=" x" class="deleteBtn"> 
-        </form>
-      </li>
-    </ul>
-   </li>
-  <%end%>
-</ul>
+<div id="mdtListContainer">
+  <ul class="mdtList">
+    <% @rooms.each do | room | %>
+    <li>
+      <ul>
+        <li><a href="<%= room.url %>"><%= room.title %></a></li> 
+        <li class="right">
+          <form method="post" action="/chat_room/<%= room.id %>">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" style='{font-family:foundation-icons; font-size:20px}' value=" x" class="deleteBtn"> 
+          </form>
+        </li>
+      </ul>
+     </li>
+    <%end%>
+  </ul>
+</div>
 
 
 <div id="new-room">
@@ -60,3 +65,5 @@
   </div>
 
 <% end %>
+
+<!-- </div> -->
