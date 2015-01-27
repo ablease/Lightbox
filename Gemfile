@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
 
 gem 'sinatra'
 gem 'faye-websocket'
@@ -11,6 +10,8 @@ gem 'foundation'
 gem 'pg'
 gem 'selenium-webdriver'
 gem 'puma'
+gem 'unicorn'
+gem 'passenger'
 
 group :development, :test do
   gem 'capybara'

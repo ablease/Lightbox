@@ -1,0 +1,207 @@
+/*@import url(http://fonts.googleapis.com/css?family=Stalemate);*/
+
+/* Layout.erb Styling */
+.frame {
+	position: relative;
+	height: 98%;
+	width: 80% ;
+	margin-left: 10%;
+}
+
+.banner {
+	border-radius: 5%;
+	position: relative;
+	margin-top: 1%;
+	height: 30%;
+	width: 98%;
+	margin-left: 1%;
+}
+
+.contents {
+	border-radius: 5%;
+	position: relative;
+	margin-top: 1%;
+	height: 68%;
+	width: 98%;
+	margin-left: 1%;
+}
+
+div #titleContainer {
+	position: relative;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#title {
+	font-family: 'Stalemate', cursive;
+	font-size: 80px;
+	width: 100%;
+	text-align: center;
+}
+
+
+
+/* Index.erb Styling */
+
+.topBar {
+	position: fixed;
+	margin-top: -20%;
+}
+
+#btnContainer {
+	position: relative;
+	margin-top: 40%;
+}
+
+#btn {
+  background: #111111;
+  border: solid black;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+#btnRed {
+	background: #111111;
+  border: solid red;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.welcome {
+	position: relative;
+	/*border: solid black;*/
+	margin-top: -20%;
+	background-color: #efefef;
+}
+
+#welcomeMessage {
+	font-size: 12px;	
+}
+
+.mdtList {
+	list-style-type: none;
+	margin-left: 0%;
+	margin-top: 20%;
+	border-left: solid grey;
+	border-right: solid grey;
+	overflow-y: scroll;
+	max-height: 40%
+}
+
+.mdtList li {
+	font: 80 20px/1.5 Helvetica, Verdana, sans-serif;
+	border-bottom: 1px solid #ccc;
+	text-align: center;
+}
+
+.mdtList li:last-child {
+	border: none;
+}
+
+.mdtList li a {
+	text-decoration: none;
+	/*color: #000;*/
+	display: block;
+	width: 100%;
+	-webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.mdtList li a:hover {
+	font-size: 30px;
+	background: #f6f6f6;
+}
+
+#new_room {
+	/*border: solid black;*/
+	position: relative;
+}
+
+#addRoomButton {
+	position: relative;
+	background: #111111;
+  border: solid black;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: 20%;
+  margin-top: 0%;
+  text-align: center;	
+}
+
+
+
+/* Login.erb Styling */
+#loginForm {
+	margin-top: 0.4%;
+	border: solid black;
+
+}
+
+.lginLabel {
+	font-family: Arial;
+}
+
+#loginEmail {
+	margin-top: 10%;
+}
+
+#loginPassword {
+	margin-top: 5%;
+}
+
+.loginGParent {
+	position: relative;
+}
+
+#loginParent {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#loginBtn {
+	position: relative;
+	background: #111111;
+  border: solid black;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: 30%;
+  margin-top: 5%;
+  text-align: center;
+}
+
+
+
+/* Sign_up.erb Styling */
+
+
+
+
+
+

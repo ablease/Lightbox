@@ -55,16 +55,16 @@ class Lightbox < Sinatra::Base
   end
 
   get '/pub_keys' do
-    user= []
+    user_json= []
 
     User.each do |user_add|
-      user_to_add = { "email: " + user_add.email => "rsakeypub: " + user_add.rsakeypub }
+      user_to_add = { email: user_add.email, rsakeypub: user_add.rsakeypub }
 
-      user << user_to_add
+      user_json << user_to_add
 
     end
-    user.to_json
 
+    user_json.to_json
   end
 
   get '/current_users' do
