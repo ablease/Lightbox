@@ -167,6 +167,7 @@ DEPENDENCIES
   dm-postgres-adapter
   faye-websocket
   foundation
+  json
   launchy
   passenger
   pg

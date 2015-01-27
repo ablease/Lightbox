@@ -10,6 +10,7 @@ gem 'foundation'
 gem 'puma'
 gem 'unicorn'
 gem 'passenger'
+gem 'json'
 
 group :development, :test do
   gem 'capybara'
