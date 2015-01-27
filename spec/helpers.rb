@@ -21,3 +21,7 @@ def add_room(title)
     click_button 'Add Room'
   end
 end
+
+def delete_room(title) 
+  click_button 'Delete'
+end

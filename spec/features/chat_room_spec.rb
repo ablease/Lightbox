@@ -11,4 +11,6 @@ feature "Chat" do
     visit("/chat_room/London")
     expect(page).to have_content("Chat Room")
   end
+
+  
 end

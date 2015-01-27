@@ -26,4 +26,16 @@ feature "User browses a list of chat rooms" do
 
 end
 
+feature "User deletes an existing room" do 
+  before(:each) {
+    sign_up("test@test.com", "test", "test")
+    add_room("London")
+  }
+  scenario "when visiting the homepage" do 
+    expect(Room.count).to eq(1)
+    visit('/')
+    delete_room("London")
+    expect(Room.count).to eq(0)
+  end
+end
 
