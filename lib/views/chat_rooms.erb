@@ -1,4 +1,6 @@
-<h1><%= @name.first.capitalize %> Chat Room</h1>
+<!-- <h1><%= @name.first.capitalize %> Chat Room</h1> -->
+<h1><center><%= @name.first.capitalize %></center></h1>
+
 <!--
 <div id="content">
   <div id="header">
@@ -16,15 +18,16 @@
 -->
 
 <div class="page-header">
-  <h1>Chat</h1>
+  <h3><center>Chat</center></h3>
 </div>
 <div id="chat-text">
 </div>
 
 <form id="input-form" class="form-inline">
   <div class="form-group">
-    <input id="input-handle" type="text" class="form-control" placeholder="Enter handle" autofocus />
+    <input id="input-handle" type="hidden" class="form-control" placeholder="<%=@current_user.name %>" value="<%=@current_user.name%>:" autofocus />
   </div>
+
   <div class="form-group">
     <input id="input-text" type="text" class="form-control" placeholder="Enter chat text here!" autofocus />
   </div>
