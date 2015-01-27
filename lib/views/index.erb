@@ -1,6 +1,40 @@
-<div class="row">
-  <div class="large-4 large-offset-4 columns">
-    <a href="/login" class="button expand">Log In</a>
-    <a href="/sign_up" class="button expand">Sign Up</a>
-  </div>
+<% if current_user %>
+
+<div class="welcome">
+  <p id='welcomeMessage'> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
 </div>
+
+<ul class="mdtList">
+  <% @rooms.each do | room | %>
+  <li>
+  <a href="<%= room.url %>"><%= room.title %></a> 
+  <form method="post" action="/chat_room/<%= room.id %>">
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete">
+    </form>
+   </li>
+  <%end%>
+</ul>
+
+<div id="new-room">
+  <form action="new_room" method="post" id="new_room">
+    <input type="text" name="title" value="Type in room name">
+    <input type="submit" value="Add Room" class='button' id="addRoomButton">
+  </form>
+</div>
+
+<form method="post" action="/login" >
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value="Log out">
+</form>
+
+<% else %>
+  
+  <div class="row">
+    <div class="large-4 large-offset-4 columns" id="btnContainer">
+      <a href="/login" class="button expand" id='btn'>Log In</a>
+      <a href="/sign_up" class="button expand" id='btnRed'>Sign Up</a>
+    </div>
+  </div>
+
+<% end %>

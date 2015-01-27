@@ -11,7 +11,7 @@ $(function(){
 
 io.on("chat", function(data){
   var m = $("<li>").text(data.name + " HEY: " +data.message);
-  $("#chat #timeline").prepend(m);
+  $("#chat #timeline").append(m);
 });
 
 io.on("connect", function(){

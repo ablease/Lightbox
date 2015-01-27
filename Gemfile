@@ -1,17 +1,17 @@
 source 'https://rubygems.org'
-ruby '2.1.2'
 
 gem 'sinatra'
-gem 'sinatra-rocketio', '~> 0.3.3'
+gem 'faye-websocket'
 gem 'rack-flash3'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'bcrypt'
 gem 'foundation'
-gem 'em-websocket'
-gem 'pg'
 gem 'mechanize'
 gem 'selenium-webdriver'
+gem 'puma'
+gem 'unicorn'
+gem 'passenger'
 
 group :development, :test do
   gem 'capybara'
@@ -21,6 +21,10 @@ group :development, :test do
   gem 'launchy'
   gem 'shotgun'
   gem 'database_cleaner'
+end
+
+group :production do
+  gem 'pg'
 end
 
 gem "codeclimate-test-reporter", group: :test, require: nil
