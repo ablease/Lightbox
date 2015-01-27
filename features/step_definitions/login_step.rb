@@ -14,4 +14,3 @@ end
 Then(/^I should see a welcome message$/) do
   expect(page).to have_content('Successfully logged in')
 end
-

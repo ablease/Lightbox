@@ -10,8 +10,6 @@
 
   <body>
     <div class="frame">
-    
-      <!-- <div class="row fullWidth"> -->
       <div class="banner">
         <div class="large-4 large-offset-4 columns" id="titleContainer">
           <h1 id="title">Lightbox</h1>
@@ -19,16 +17,12 @@
       </div>
 
       <div class="contents">
-    
         <% if flash[:notice] %>
         <div id="notice"><%= flash[:notice] %></div>
         <% end %>
 
         <%= yield %>
-
       </div>
-    
      </div>
-
   </body>
 </html>

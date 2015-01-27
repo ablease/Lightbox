@@ -44,4 +44,3 @@ DBEngine=mysql
 DBInstanceClass=db.t1.micro
 DBSnapshotIdentifier=
 DBUser=ebroot
-

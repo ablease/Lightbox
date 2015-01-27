@@ -2,7 +2,9 @@ require 'faye/websocket'
 require 'thread'
 require 'json'
 require 'erb'
+
 module Chat
+
   class Sockets
     KEEPALIVE_TIME = 15 # in seconds
     CHANNEL        = "chat-demo"
@@ -40,6 +42,7 @@ module Chat
     end
 
     private
+    
     def sanitize(message)
       json = JSON.parse(message)
       json.each {|key, value| json[key] = ERB::Util.html_escape(value) }

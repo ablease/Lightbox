@@ -1,30 +1,26 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
-gem 'faye-websocket'
-gem 'rack-flash3'
+gem 'bcrypt'
 gem 'data_mapper'
 gem 'dm-postgres-adapter'
-gem 'bcrypt'
+gem 'faye-websocket'
 gem 'foundation'
-gem 'puma'
-gem 'unicorn'
 gem 'passenger'
+gem 'puma'
+gem 'rack-flash3'
+gem 'sinatra'
+gem 'unicorn'
 
 group :development, :test do
   gem 'capybara'
   gem 'cucumber'
   gem 'cucumber-sinatra'
-  gem 'rspec'
-  gem 'launchy'
-  gem 'shotgun'
   gem 'database_cleaner'
-  
+  gem 'launchy'
+  gem 'rspec'
+  gem 'shotgun'
 end
 
-group :production do
-  gem 'pg'
+group :test do
+  gem 'codeclimate-test-reporter', require: nil
 end
-
-gem "codeclimate-test-reporter", group: :test, require: nil
-

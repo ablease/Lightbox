@@ -27,4 +27,3 @@ OptionSettingFile=/Users/Alex/Projects/lightbox/.elasticbeanstalk/optionsettings
 RdsDeletionPolicy=Delete
 RdsEnabled=Yes
 RdsSourceSnapshotName=
-

@@ -7,4 +7,3 @@ require File.join(File.dirname(__FILE__), 'middleware/chat_backend')
 use Chat::Sockets
 
 run Lightbox
-
