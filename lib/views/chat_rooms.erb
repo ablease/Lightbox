@@ -38,11 +38,15 @@ $( document ).ready(function() {
   var encrypt_conversation = document.getElementById('submit-button');
     encrypt_conversation.addEventListener('click', function() {
 
-      $.getJSON( "/pub_keys", function( data ) {
-        var get_PlainText= document.getElementById('input-text')
-        var PlainText= get_PlainText.value
-        var own_key= [];
+      var get_PlainText= document.getElementById('input-text')
+      var PlainText= get_PlainText.value
+      console.log('encrypting ' + PlainText)
 
+
+      $.getJSON( "/pub_keys", function( data ) {
+
+
+        var own_key= [];
         var publ_keys = [];
         var encrypted_messages = [];
 
@@ -66,26 +70,21 @@ $( document ).ready(function() {
       function decrypt_messge(encrypted_message){
 
         var your_message = encrypted_message[0]
-        console.log("You message encrypted " + your_message)
+        console.log("Your message encrypted " + your_message)
 
         var local_user_key = cryptico.generateRSAKey(window.name, 1024);
+
+        var local_user_public_key = cryptico.publicKeyString(local_user_key);
+
+        console.log(local_user_public_key)
 
         var DecryptionResult = cryptico.decrypt(your_message, local_user_key)
 
         console.log('Your message unenecrypte ' + DecryptionResult.plaintext + ' THAT IS IT!')
 
       };
-
-
-
-
-        // var CipherText = encrypted_message;
-        //
-        // var DecryptionResult = cryptico.decrypt(CipherText, window.name);
-
-      });
     });
-// });
+  });
 
 
 </script>
