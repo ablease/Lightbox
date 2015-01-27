@@ -1,18 +1,20 @@
 <% if current_user %>
 
-<nav class='top-bar'>
-  <ul class='title-area'>
-    <li class='name'>
-      <hi><a href='#'>Lightbox</a></h1>
+<nav class='navBar'>
+  <ul class=''>
+    <li class="navigation" id='home'>
+      <hi id="navTitle"><a href='/'>Lightbox</a></h1>
     </li>
-    <li class='has-dropdown'><a href="#">Menu</a>
-        <ul class="dropdown">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">Log out</a></li>
-        </ul>
+    <li class="navigation" id='logOut'>
+    <!--   <a href="#">Log out</a> -->
+    <form method="post" action="/login" >
+      <input type="hidden" name="_method" value="delete">
+      <input type="submit" value="Log out" class='button' id='logOutBtn'>
+    </form>
     </li>
   </ul>
 </nav>
+
 
 <!--  <div class="welcome">
   <p id='welcomeMessage'> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
@@ -21,14 +23,19 @@
 <ul class="mdtList">
   <% @rooms.each do | room | %>
   <li>
-  <a href="<%= room.url %>"><%= room.title %></a> 
-  <form method="post" action="/chat_room/<%= room.id %>">
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Delete">
-    </form>
+    <ul>
+      <li><a href="<%= room.url %>"><%= room.title %></a></li> 
+      <li class="right">
+        <form method="post" action="/chat_room/<%= room.id %>">
+          <input type="hidden" name="_method" value="delete">
+          <input type="submit" style='{font-family:foundation-icons; font-size:20px}' value=" x" class="deleteBtn"> 
+        </form>
+      </li>
+    </ul>
    </li>
   <%end%>
 </ul>
+
 
 <div id="new-room">
   <form action="new_room" method="post" id="new_room">
@@ -36,11 +43,6 @@
     <input type="submit" value="Add Room" class='button' id="addRoomButton">
   </form>
 </div>
-
-<form method="post" action="/login" >
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Log out">
-</form>
 
 <% else %>
 

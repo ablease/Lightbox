@@ -98,14 +98,27 @@ div #titleContainer {
 	border-left: solid grey;
 	border-right: solid grey;
 	overflow-y: scroll;
-	max-height: 40%
+	max-height: 40%;
 }
 
 .mdtList li {
 	font: 80 20px/1.5 Helvetica, Verdana, sans-serif;
 	border-bottom: 1px solid #ccc;
-	text-align: center;
+	/*text-align: center;*/
+	/*width: 100%;*/
 }
+
+.mdtList li ul li {
+	display: inline-block;
+	border-bottom: none;
+	text-align: left;
+}
+
+/*.right {
+	text-align: right;
+	float: right;
+	margin-right: 5%;
+}*/
 
 .mdtList li:last-child {
 	border: none;
@@ -126,6 +139,14 @@ div #titleContainer {
 .mdtList li a:hover {
 	font-size: 30px;
 	background: #f6f6f6;
+}
+
+.deleteBtn {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    padding: 0px;
+    cursor: pointer;		
 }
 
 #new_room {
@@ -149,6 +170,38 @@ div #titleContainer {
   text-align: center;	
 }
 
+.navBar {
+	background-color: black;
+	display: block;
+	font: white;
+}
+
+.navigation {
+	display: inline-block;
+	max-width: 40%;
+	border: solid black;
+}
+
+#logOut {
+	/*float: right;*/
+	margin-left: 50%;
+	margin-bottom: 1%;
+}
+
+#logOutBtn {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    padding: 0px;
+    cursor: pointer;	
+}
+
+#navTitle {
+	font-family: 'Stalemate', cursive;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;	
+}
 
 
 /* Login.erb Styling */
