@@ -1,8 +1,22 @@
 <% if current_user %>
 
-<div class="welcome">
+<nav class='top-bar'>
+  <ul class='title-area'>
+    <li class='name'>
+      <hi><a href='#'>Lightbox</a></h1>
+    </li>
+    <li class='has-dropdown'><a href="#">Menu</a>
+        <ul class="dropdown">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Log out</a></li>
+        </ul>
+    </li>
+  </ul>
+</nav>
+
+<!--  <div class="welcome">
   <p id='welcomeMessage'> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
-</div>
+</div> -->
 
 <ul class="mdtList">
   <% @rooms.each do | room | %>
@@ -23,6 +37,12 @@
 </form>
 
 <% else %>
+
+      <div class="banner">
+        <div class="large-4 large-offset-4 columns" id="titleContainer">
+          <h1 id="title">Lightbox</h1>
+        </div>
+      </div>
   
   <div class="row">
     <div class="large-4 large-offset-4 columns" id="btnContainer">
