@@ -100,7 +100,6 @@ GEM
       daemon_controller (>= 1.2.0)
       rack
       rake (>= 0.8.1)
-    pg (0.17.1)
     puma (2.11.0)
       rack (>= 1.1, < 2.0)
     rack (1.6.0)
@@ -169,7 +168,6 @@ DEPENDENCIES
   foundation
   launchy
   passenger
-  pg
   puma
   rack-flash3
   rspec
