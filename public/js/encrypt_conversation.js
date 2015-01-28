@@ -1,23 +1,6 @@
-var scheme   = "<%= @scheme %>";
-var uri      = scheme + window.document.location.host + "/";
-var ws       = new WebSocket(uri);
-ws.onmessage = function(message) {
-  var data = JSON.parse(message.data);
-  $("#chat-text").append("<div class='panel panel-default'><div class='panel-heading'>" + data.handle + "</div><div class='panel-body'>" + data.text + "</div></div>");
-  $("#chat-text").stop().animate({
-    scrollTop: $('#chat-text')[0].scrollHeight
-  }, 800);
-};
-$(document).on("ready", function() {
-
-  $("#submit-button").on("click", function(event) {
-    event.preventDefault();
-
-
-
-// encryption start
-
-
+$( document ).ready(function() {
+  // var encrypt_conversation = document.getElementById('submit-button');
+  // encrypt_conversation.addEventListener('click', function() {
 
     var get_PlainText= document.getElementById('input-text');
     var PlainText= get_PlainText.value;
@@ -70,8 +53,6 @@ $(document).on("ready", function() {
 
       console.log('___________________________');
 
-      send_message()
-
 
     }
 
@@ -93,22 +74,5 @@ $(document).on("ready", function() {
       console.log('Your message unenecrypte -' + DecryptionResult.plaintext + '- THAT IS IT!');
 
     }
-
-
-
-// encryption ends
-
-
-
-
-    function send_message(){
-
-
-    var handle = $("#input-handle")[0].value;
-    var text   = $("#input-text")[0].value;
-    console.log(handle, text);
-    ws.send(JSON.stringify({ handle: handle, text: text }));
-    $("#input-text")[0].value = "";
-  }
-  });
+  // });
 });
