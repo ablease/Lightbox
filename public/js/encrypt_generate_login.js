@@ -1,8 +1,8 @@
 var encrypt = document.getElementById('loginBtn');
 encrypt.addEventListener('click', function() {
-  alert("got clicked");
+  console.log("got clicked");
   var get_PassPhrase= document.getElementById('password');
-  alert(get_PassPhrase.value);
+  console.log(get_PassPhrase.value);
   var PassPhrase= get_PassPhrase.value;
   var Bits = 1024;
   var local_user_key = cryptico.generateRSAKey(PassPhrase, Bits);
