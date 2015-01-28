@@ -1,22 +1,42 @@
 <% if current_user %>
 
-<div class="welcome">
-  <p id='welcomeMessage'> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
-  <p> Your encryption key <%= current_user.rsakeypub %></p>
-
-</div>
-
-<ul class="mdtList">
-  <% @rooms.each do | room | %>
-  <li>
-  <a href="<%= room.url %>"><%= room.title %></a>
-  <form method="post" action="/chat_room/<%= room.id %>">
+<nav class='navBar'>
+  <ul class=''>
+    <li class="navigation" id='home'>
+      <hi id="navTitle"><a href='/'>Lightbox</a></h1>
+    </li>
+    <li class="navigation" id='logOut'>
+    <!--   <a href="#">Log out</a> -->
+    <form method="post" action="/login" >
       <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Delete">
+      <input type="submit" value="Log out" class='button' id='logOutBtn'>
     </form>
-   </li>
-  <%end%>
-</ul>
+    </li>
+  </ul>
+</nav>
+
+
+<!--  <div class="welcome">
+  <p id='welcomeMessage'> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
+</div> -->
+
+<div id="mdtListContainer">
+  <ul class="mdtList">
+    <% @rooms.each do | room | %>
+    <li>
+      <ul>
+        <li><a href="<%= room.url %>"><%= room.title %></a></li>
+        <li class="right">
+          <form method="post" action="/chat_room/<%= room.id %>">
+            <input type="hidden" name="_method" value="delete">
+            <input type="submit" style='{font-family:foundation-icons; font-size:20px}' value=" x" class="deleteBtn">
+          </form>
+        </li>
+      </ul>
+     </li>
+    <%end%>
+  </ul>
+</div>
 
 <div id="new-room">
   <form action="new_room" method="post" id="new_room">
@@ -25,10 +45,7 @@
   </form>
 </div>
 
-<form method="post" action="/login" >
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value="Log out">
-</form>
+<a href="Referral">Referral</a>
 
 <% else %>
 
@@ -40,3 +57,5 @@
   </div>
 
 <% end %>
+
+<!-- </div> -->

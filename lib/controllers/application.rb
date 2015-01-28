@@ -5,4 +5,12 @@ class Lightbox < Sinatra::Base
     erb :index
   end
 
+  get '/Referral' do 
+    erb :refer
+  end
+  
+  post '/referral' do
+    flash[:notice] = "Email Sent"
+    redirect '/'
+  end
 end
