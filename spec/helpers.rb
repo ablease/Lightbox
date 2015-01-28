@@ -1,6 +1,7 @@
-def sign_up(email, password, password_confirmation, gmc_number)
+def sign_up(name, email, password, password_confirmation, gmc_number)
   visit '/sign_up'
   expect(page.status_code).to eq 200
+  fill_in :name, with: name
   fill_in :email, with: email
   fill_in :password, with: password
   fill_in :password_confirmation, with: password_confirmation

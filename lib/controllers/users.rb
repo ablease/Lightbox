@@ -8,7 +8,7 @@ class Lightbox < Sinatra::Base
   end
 
   post '/sign_up' do
-    verify_gmc(params["gmc_number"])
+    verify_gmc(params["gmc_number"], params["name"])
     @new_user = User.create(name: params["name"], 
                             email: params["email"], 
                             password: params["password"], 

@@ -3,7 +3,7 @@ require 'helpers'
 
 feature "User adds a new room" do 
   before(:each) {
-    sign_up("test@test.com", "test", "test", "1111111")
+    sign_up('test', "test@test.com", "test", "test", "1111111")
   }
   scenario "when visiting the homepage" do 
     expect(Room.count).to eq(0)
@@ -15,7 +15,7 @@ end
 
 feature "User browses a list of chat rooms" do
   before(:each) {
-    sign_up("test@test.com", "test", "test", "1111111")
+    sign_up('test', "test@test.com", "test", "test", "1111111")
     add_room("London")
   }
 
@@ -28,7 +28,7 @@ end
 
 feature "User deletes an existing room" do 
   before(:each) {
-    sign_up("test@test.com", "test", "test", "1111111")
+    sign_up('test', "test@test.com", "test", "test", "1111111")
     add_room("London")
   }
   scenario "when visiting the homepage" do 
