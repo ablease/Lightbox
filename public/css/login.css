@@ -1,35 +1,36 @@
 /* Login.erb Styling */
+
+#formContainer {
+	width: 100%;
+	max-width: 500px;
+	margin-right: auto;
+	margin-left: auto;
+	text-align: center;
+}
+
 #loginForm {
 	margin-top: 0.4%;
 	border: solid black;
-
 }
 
-.lginLabel {
-	font-family: Arial;
+.row {
+	text-align: center;
 }
 
 #loginEmail {
+	width: 60%;
+	min-width: 80%;
 	margin-top: 10%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 #loginPassword {
+	width: 60%;
+	min-width: 80%;
 	margin-top: 5%;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.loginGParent {
-	position: relative;
-}
-
-#loginParent {
-	position: relative;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
 }
 
 #loginBtn {
