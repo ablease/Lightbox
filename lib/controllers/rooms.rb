@@ -19,9 +19,7 @@ class Lightbox < Sinatra::Base
   end
 
   delete '/chat_room/:id' do |id|
-    puts id
     room = Room.get!(id)
-    p room
     room.destroy!
     flash[:notice] = ["Room deleted sucessfully"]
     redirect to ('/') 
