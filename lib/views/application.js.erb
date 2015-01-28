@@ -59,7 +59,7 @@ $(document).on("ready", function() {
         console.log('This is encrypted!'+ encrypted_messages[receiver_of_text]['encrypted_text'] + 'This is encrypted!');
 
       });
-      console.log('This is the first object' + encrypted_messages[sender_email]);
+
 
       put_encrypted_message_in_form(encrypted_messages);
       send_message()
@@ -68,15 +68,6 @@ $(document).on("ready", function() {
 
     function put_encrypted_message_in_form (encrypted_message){
       document.getElementById("input-text").value = JSON.stringify(encrypted_message);
-
-      console.log('___________________________');
-      console.log('got sent');
-      console.log('___________________________');
-
-
-
-
-
 
     }
 
