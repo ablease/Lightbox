@@ -1,4 +1,5 @@
 require "json"
+require_relative './helpers.rb'  
 
 class Lightbox < Sinatra::Base
 
@@ -7,12 +8,12 @@ class Lightbox < Sinatra::Base
   end
 
   post '/sign_up' do
+    verify_gmc(params["gmc_number"])
     @new_user = User.create(name: params["name"], 
                             email: params["email"], 
                             password: params["password"], 
                             password_confirmation: params["password_confirmation"],
                             gmc_number: params["gmc_number"])
-
     if 	@new_user.save
       session[:user_id] = @new_user.id
       flash[:notice] = "Successfully signed up"
@@ -23,6 +24,7 @@ class Lightbox < Sinatra::Base
     end
 
   end
+
 
   get '/login' do
     erb :login
