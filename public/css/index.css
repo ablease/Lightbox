@@ -1,0 +1,174 @@
+/* Index.erb Styling */
+
+#indexBody {
+	position: relative;
+	border: solid black;
+	margin-bottom: 10%
+}
+
+.topBar {
+	position: fixed;
+	margin-top: -20%;
+}
+
+#btnContainer {
+	position: relative;
+	margin-top: 40%;
+}
+
+#btn {
+  background: #111111;
+  border: solid black;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+#btnRed {
+	background: #111111;
+  border: solid red;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.welcome {
+	position: relative;
+	/*border: solid black;*/
+	margin-top: -20%;
+	background-color: #efefef;
+}
+
+#welcomeMessage {
+	font-size: 12px;	
+}
+
+#mdtListContainer {
+	position: relative;
+	border: solid black;
+	margin-top: 1%;
+	height: 70%;
+	padding: 0;
+}
+
+.mdtList {
+	list-style-type: none;
+	margin-left: 0%;
+	margin-top: 20%;
+	border-left: solid grey;
+	border-right: solid grey;
+	overflow-y: scroll;
+	max-height: 40%;
+}
+
+.mdtList li {
+	font: 80 20px/1.5 Helvetica, Verdana, sans-serif;
+	border-bottom: 1px solid #ccc;
+	/*text-align: center;*/
+	/*width: 100%;*/
+}
+
+.mdtList li ul li {
+	display: inline-block;
+	border-bottom: none;
+	text-align: left;
+}
+
+.mdtList li:last-child {
+	border: none;
+}
+
+.mdtList li a {
+	text-decoration: none;
+	/*color: #000;*/
+	display: block;
+	width: 100%;
+	-webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.mdtList li a:hover {
+	font-size: 30px;
+	background: #f6f6f6;
+}
+
+.deleteBtn {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    padding: 0px;
+    cursor: pointer;		
+}
+
+#new_room {
+	/*border: solid black;*/
+	position: relative;
+	margin-bottom: 5%;
+	margin-top: 1%;
+	text-align: center;
+}
+
+#addRoomButton {
+	position: relative;
+	background: #111111;
+  border: solid black;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0%;
+  text-align: center;	
+  /*left: 40%;*/
+}
+
+.navBar {
+	background-color: black;
+	display: block;
+	font: white;
+	height: 10%;
+}
+
+.navigation {
+	display: inline-block;
+	max-width: 40%;
+	border: solid black;
+}
+
+#logOut {
+	/*float: right;*/
+	margin-left: 50%;
+	margin-bottom: 1%;
+}
+
+#logOutBtn {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    padding: 0px;
+    cursor: pointer;	
+}
+
+#navTitle {
+	font-family: 'Stalemate', cursive;
+	font-size: 30px;
+	width: 100%;
+	text-align: center;	
+}

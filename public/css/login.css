@@ -1,0 +1,49 @@
+/* Login.erb Styling */
+#loginForm {
+	margin-top: 0.4%;
+	border: solid black;
+
+}
+
+.lginLabel {
+	font-family: Arial;
+}
+
+#loginEmail {
+	margin-top: 10%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#loginPassword {
+	margin-top: 5%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.loginGParent {
+	position: relative;
+}
+
+#loginParent {
+	position: relative;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+#loginBtn {
+	position: relative;
+	background: #111111;
+  border: solid black;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
+  text-align: center;
+}
