@@ -3,7 +3,12 @@ var uri      = scheme + window.document.location.host + "/";
 var ws       = new WebSocket(uri);
 ws.onmessage = function(message) {
   var data = JSON.parse(message.data);
-  $("#chat-text").append("<div class='panel panel-default'><div class='panel-heading'>" + data.handle + "</div><div class='panel-body'>" + data.text + "</div></div>");
+  var all_encrypted_messages = data.text;
+  var all_encrypted_messages_json = JSON.stringify(eval("(" + all_encrypted_messages + ")"));
+  var all_encrypted_for_user = JSON.parse(all_encrypted_messages_json)
+
+
+  $("#chat-text").append("<div class='panel panel-default'><div class='panel-heading'>" + data.handle + "</div><div class='panel-body'>" + all_encrypted_for_user + "</div></div>");
   $("#chat-text").stop().animate({
     scrollTop: $('#chat-text')[0].scrollHeight
   }, 800);
@@ -52,25 +57,24 @@ $(document).on("ready", function() {
         console.log('This is encrypted!'+ encrypted_messages[receiver_of_text]['encrypted_text'] + 'This is encrypted!');
 
       });
-      console.log(encrypted_messages);
       console.log('This is the first object' + encrypted_messages[sender_email]);
-      decrypt_messge(encrypted_messages);
+
       put_encrypted_message_in_form(encrypted_messages);
+      send_message()
+      decrypt_messge(encrypted_messages);
     });
 
 
     function put_encrypted_message_in_form (encrypted_message){
       document.getElementById("input-text").value = JSON.stringify(encrypted_message);
-      console.log('___________________________');
-      console.log('___________________________');
 
       console.log('___________________________');
       console.log('got sent');
       console.log('___________________________');
 
-      console.log('___________________________');
 
-      send_message()
+
+
 
 
     }
@@ -96,6 +100,7 @@ $(document).on("ready", function() {
 
 
 
+
 // encryption ends
 
 
@@ -111,4 +116,5 @@ $(document).on("ready", function() {
     $("#input-text")[0].value = "";
   }
   });
+
 });
