@@ -11,6 +11,6 @@ feature 'User wants to refer a colleague' do
     click_link('Referral')
     fill_in :email, with: "test@test.com" 
     click_button 'Send'
-    expect(page).to have_content('Email Sent')
+    expect(page).to have_content('Email sent')
   end
 end
