@@ -12,7 +12,11 @@ feature "User Sign up" do
   scenario 'with a password that doesnt match' do
     expect{ sign_up('example@email.com', 'password', 'nomatch') }.to change(User, :count).by(0)
   end
-
+  
+  scenario 'with a gmc number that is not found' do
+    sign_up('test@test.com', 'password', 'password', '1234567')
+    expect(page).to have_content("That gmc number was not found")
+  end
 end
 
 feature "User Log In" do
