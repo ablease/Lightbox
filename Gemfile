@@ -11,6 +11,8 @@ gem 'puma'
 gem 'unicorn'
 gem 'passenger'
 gem 'json'
+gem 'rest-client', '~> 1.7.2'
+gem 'mailgun-ruby', '~>1.0.3', require: 'mailgun'
 
 group :development, :test do
   gem 'capybara'

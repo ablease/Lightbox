@@ -17,11 +17,6 @@ class Lightbox < Sinatra::Base
   use Rack::Flash
   use Rack::MethodOverride
 
-:a
-:sa
-:wq
-:q
-
   # start the server if ruby file executed directly
   run! if app_file == $0
 end
