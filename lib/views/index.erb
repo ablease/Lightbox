@@ -4,6 +4,7 @@
   <p id='welcomeMessage'> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
 </div>
 
+
 <ul class="mdtList">
   <% @rooms.each do | room | %>
   <li>
@@ -27,6 +28,8 @@
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value="Log out">
 </form>
+
+<a href="Referral">Referral</a>
 
 <% else %>
   

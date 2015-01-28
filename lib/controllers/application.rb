@@ -5,4 +5,8 @@ class Lightbox < Sinatra::Base
     erb :index
   end
 
+  get '/Referral' do 
+    erb :refer
+  end
+
 end

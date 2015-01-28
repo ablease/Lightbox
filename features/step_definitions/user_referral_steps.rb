@@ -1,9 +1,12 @@
 Given(/^I want Refer a Colleague$/) do
-  visit'/'
+  visit('/login')
+  fill_in 'email', :with => "test@test.com"
+  fill_in 'password', :with => 'test'
+  click_button 'Log In'
 end
 
 When(/^I press Refer a Colleague$/) do
-  click_link('Refer a Colleague')
+  click_link('Referral')
 end
 
 Then(/^I should be able to Refer a Colleague$/) do
