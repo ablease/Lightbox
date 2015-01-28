@@ -1,5 +1,5 @@
 Given(/^I have entered my name$/) do
-	visit('/sign_up')
+	visit('referral/ABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCA')
 	fill_in 'name', :with => "test"
 end
 

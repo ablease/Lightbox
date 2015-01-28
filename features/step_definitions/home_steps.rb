@@ -1,17 +1,19 @@
 Given(/^I am on the homepage$/) do
   visit('/')
 end
-
-Given(/^I want to Sign Up$/) do
+Given(/^I want to Log in$/) do
   visit('/')
 end
 
-When(/^I press Sign Up$/) do
-  click_link('Sign Up')
+When(/^I press Log in$/) do
+  click_link('Log In')
 end
 
-Then(/^I should be able to Sign Up$/) do
-  visit('/sign_up')
+Then(/^I should be able to Log in$/) do
+  expect(page).to have_content('Please enter your login details')
+end
+Given(/^I want to Sign Up$/) do
+  visit('/')
 end
 
 Given(/^I want to join my MDT chat$/) do

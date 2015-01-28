@@ -19,7 +19,7 @@ class Lightbox < Sinatra::Base
 
   get '/referral/:token' do
     flash[:notice] = "You have been successfully referred"
-    erb :index
+    erb :sign_up
   end
 
   def generate_referral_token

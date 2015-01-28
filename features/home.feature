@@ -5,7 +5,7 @@ Feature: The homepage
 
     Scenario: Logging in
       Given I am on the homepage
-      And I want to Sign Up
-      When I press Sign Up
-      Then I should be able to Sign Up
+      And I want to Log in
+      When I press Log in
+      Then I should be able to Log in 
     
