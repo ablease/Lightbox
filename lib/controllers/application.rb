@@ -27,11 +27,11 @@ class Lightbox < Sinatra::Base
   end
 
   def send_email(email, token)
-    RestClient.post "https://api:key-d5385bf150371c99a132f08198a3aaf1"\
-    "@api.mailgun.net/v2/sandboxee6d21a54cf1407eb2874520384a379b.mailgun.org/messages",
-      :from => 'Mailgun Sandbox <postmaster@sandboxee6d21a54cf1407eb2874520384a379b.mailgun.org>',
+    RestClient.post "https://api:key-9eca5824d0f54d46266d9dfeb262ca8d"\
+    "@api.mailgun.net/v2/app077aebbd49114d208e9fcdbafd335c45.mailgun.org/messages",
+      :from => 'Mailgun Sandbox <postmaster@app077aebbd49114d208e9fcdbafd335c45.mailgun.org>',
       :to => email,
       :subject => 'Referral for Lightbox',
-      :text => ('http://localhost:5001/referral/' + token)
+      :text => ('https://makers-lightbox.herokuapp.com/referral/' + token)
   end
 end
