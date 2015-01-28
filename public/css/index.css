@@ -1,0 +1,213 @@
+/* Index.erb Styling */
+
+/* NAVIGATION BAR*/
+.navBar {
+	position: relative;
+	height: 15%;
+	display: block;
+}
+
+#navList {
+	width: 98%;
+	margin-left: 1%;
+}
+
+#navTitle {
+	font-family: 'Stalemate', cursive;
+	font-size: 50px;
+	width: 100%;
+	text-align: center;	
+	color: black;
+}
+
+.navigation {
+	display: inline-block;
+	max-width: 40%;
+	/*border: solid black;*/
+}
+
+#logOut {
+	margin-left: 20%;
+	margin-bottom: 1%;
+}
+
+#logOutBtn {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    padding: 0px;
+    cursor: pointer;
+    color: black;	
+}
+
+
+
+/* CHAT ROOM LIST*/
+#mdtListContainer {
+	height: 60%;
+	max-height: 60%;
+	width: 100%;
+	max-width: 500px;	
+	position: relative;
+	margin-top: 1%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.mdtList {
+	list-style-type: none;
+	margin-left: 0%;
+	margin-top: 2%;
+	border-left: solid grey;
+	border-right: solid grey;
+	overflow-y: scroll;
+	height: 98%;
+}
+
+.firstListElement {
+	font: 80 20px/1.5 Helvetica, Verdana, sans-serif;
+	border-bottom: 1px solid #ccc;
+	text-align: center; 
+	width: 98%; 
+	height: 20%;
+	margin-bottom: 4%;
+	margin-left: 1%;
+	border: solid black;
+	background-color: #eeeeee;
+	/*border: solid black;*/
+	/*border-radius: 5%;*/
+
+/*background: linear-gradient(to bottom, rgba(226,226,226,1) 0%,rgba(219,219,219,1) 50%,rgba(209,209,209,1) 51%,rgba(254,254,254,1) 100%); 
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 );*/
+}
+
+.innerList {
+	display: inline-block;
+	border-bottom: none;
+	text-align: left;
+}
+
+.mdtName {
+	text-decoration: none;
+	display: block;
+	width: 555555%;
+	color: black;
+	-webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.mdtName:hover {
+	font-size: 30px;
+	/*background: #f6f6f6;*/
+	color: red;
+}
+
+
+
+
+/* Form Styling */
+#roomNameInput {
+	max-width: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+
+
+#indexBody {
+	position: relative;
+	border: solid black;
+	margin-bottom: 10%
+}
+
+.topBar {
+	position: fixed;
+	margin-top: -20%;
+}
+
+#btnContainer {
+	position: relative;
+	margin-top: 40%;
+}
+
+#btn {
+  background: #111111;
+  border: solid black;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+
+#btnRed {
+	background: #111111;
+  border: solid red;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.welcome {
+	position: relative;
+	/*border: solid black;*/
+	margin-top: -20%;
+	background-color: #efefef;
+}
+
+#welcomeMessage {
+	font-size: 12px;	
+}
+
+
+
+.deleteBtn {
+    background-color: transparent;
+    border: none;
+    font-weight: bold;
+    padding: 0px;
+    cursor: pointer;		
+}
+
+#new_room {
+	/*border: solid black;*/
+	position: relative;
+	margin-bottom: 5%;
+	margin-top: 1%;
+	text-align: center;
+}
+
+#addRoomButton {
+	position: relative;
+	background: #111111;
+  border: solid black;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0%;
+  text-align: center;	
+  /*left: 40%;*/
+}
+
+
+
+
+

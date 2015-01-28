@@ -8,6 +8,7 @@ class Lightbox < Sinatra::Base
 
   get '/chat_room/*' do
     @name = params[:splat]
+    @current_user ||= User.get(session[:user_id]) if session[:user_id]
     erb :chat_rooms
   end
 

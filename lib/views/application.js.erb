@@ -3,7 +3,14 @@ var uri      = scheme + window.document.location.host + "/";
 var ws       = new WebSocket(uri);
 ws.onmessage = function(message) {
   var data = JSON.parse(message.data);
-  $("#chat-text").append("<div class='panel panel-default'><div class='panel-heading'>" + data.handle + "</div><div class='panel-body'>" + data.text + "</div></div>");
+  var all_encrypted_messages = data.text;
+  var all_encrypted_messages_json = JSON.stringify(eval("(" + all_encrypted_messages + ")"));
+  var all_encrypted_for_user = JSON.parse(all_encrypted_messages_json)
+  var encrypted_message_for_user
+
+  decrypt_messge(all_encrypted_for_user, data);
+
+
   $("#chat-text").stop().animate({
     scrollTop: $('#chat-text')[0].scrollHeight
   }, 800);
@@ -12,10 +19,105 @@ $(document).on("ready", function() {
 
   $("#submit-button").on("click", function(event) {
     event.preventDefault();
+
+
+
+// encryption start
+
+
+
+    var get_PlainText= document.getElementById('input-text');
+    var PlainText= get_PlainText.value;
+    console.log('Text to encrypt ' + PlainText);
+
+    var get_sender_email = document.getElementById('input-handle-email');
+    var sender_email = get_sender_email.value;
+    console.log('Current User is ' + sender_email);
+
+
+
+    $.getJSON( "/pub_keys", function( data ) {
+
+
+      var own_key= [];
+      var publ_keys = [];
+      var encrypted_messages = {};
+
+      console.log( "ready!" );
+      $.each( data, function( key, val ) {
+        console.log(val.rsakeypub);
+        publ_keys.push( val.rsakeypub );
+      });
+      console.log(publ_keys);
+
+      $.each( data, function( key, val ) {
+        var EncryptionResult = cryptico.encrypt(PlainText, val.rsakeypub);
+        var EncryptionResultcipher = EncryptionResult.cipher;
+        var receiver_of_text = val.email;
+        console.log(receiver_of_text + ' This is receiver of text');
+        encrypted_messages[receiver_of_text] = {encrypted_text: EncryptionResultcipher};
+        console.log('This is encrypted!'+ encrypted_messages[receiver_of_text]['encrypted_text'] + 'This is encrypted!');
+
+      });
+
+
+      put_encrypted_message_in_form(encrypted_messages);
+      send_message()
+    });
+
+
+    function put_encrypted_message_in_form (encrypted_message){
+      document.getElementById("input-text").value = JSON.stringify(encrypted_message);
+
+    }
+
+
+
+
+
+
+
+
+// encryption ends
+
+
+
+
+    function send_message(){
+
+
     var handle = $("#input-handle")[0].value;
     var text   = $("#input-text")[0].value;
     console.log(handle, text);
     ws.send(JSON.stringify({ handle: handle, text: text }));
     $("#input-text")[0].value = "";
+  }
   });
+
 });
+
+
+function decrypt_messge(encrypted_message, data){
+
+  var get_sender_email = document.getElementById('input-handle-email');
+  var sender_email = get_sender_email.value;
+  console.log('Current User is ' + sender_email);
+
+  var your_message = encrypted_message[sender_email]['encrypted_text']
+  console.log("Your message encrypted " + your_message);
+
+  var local_user_key = cryptico.generateRSAKey(window.name, 1024);
+
+  var local_user_public_key = cryptico.publicKeyString(local_user_key);
+
+  console.log(local_user_public_key);
+
+  var DecryptionResult = cryptico.decrypt(your_message, local_user_key);
+
+  var encrypted_message_for_user = DecryptionResult.plaintext
+
+  console.log('Your message unenecrypte -' + DecryptionResult.plaintext + '- THAT IS IT!');
+
+  $("#chat-text").append("<div class='panel panel-default'><div class='panel-heading'>" + data.handle + "</div><div class='panel-body'>" + encrypted_message_for_user + "</div></div>");
+
+}

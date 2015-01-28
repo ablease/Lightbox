@@ -1,0 +1,45 @@
+/* CHAT ROOM STYLING */
+/* Chat room page, scrollable, responsive */
+/* Completed */
+
+#top {
+  height: 15%;
+  /*border: solid black;*/
+}
+
+#chatNavTitle {
+  font-family: 'Stalemate', cursive;
+  font-size: 30px;
+  width: 100%;
+  text-align: center; 
+}
+
+#chat-text {
+  margin-top: 1%;
+	height: 60%;
+  max-height: 60%;
+	overflow-y: scroll;
+  border: solid black;
+}
+
+#chatInputForm {
+  text-align: center;
+  margin-top: 5%;
+  /*border: solid black;*/
+}
+
+#submit-button {
+  position: relative;
+  background: #111111;
+  border: solid black;
+  background-color: white;
+  font-family: Arial;
+  color: black;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
+  text-align: center;
+}

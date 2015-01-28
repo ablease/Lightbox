@@ -1,23 +1,28 @@
 <p>Please enter your login details</p>
-
-<form action="/login" method='post' id='loginForm'>
-
-  <div class="row">
-    <div class="large-4 columns" id="loginEmail">
-        <input type='email' name='email' placeholder="Email">
-    </div>
+<div class="banner">
+  <div class="large-4 large-offset-4 columns" id="titleContainer">
+    <h1 id="title">Lightbox</h1>
   </div>
+</div>
 
-  <div class="row" id="loginPassword">
-    <div class="large-4 columns">
-        <input type='password' name='password' placeholder='Password'>
+<div id="formContainer" >
+  <form action="/login" method='post' id='loginForm'>
+
+    <div class="row" id="loginEmail">
+          <input type='email' name='email' placeholder="Email">
     </div>
-  </div>
 
-  <div class="row loginGParent">
-    <div id="loginParent">
-      <input type="submit" value="Log In" class="button" id='loginBtn'>
+
+    <div class="row" id="loginPassword">
+          <input type='password' id= 'password' name='password' placeholder='Password'>
     </div>
-  </div>
 
-</form>
+    <div class="row" id="loginParent">
+        <input type="submit" value="Log In" class="button" id='loginBtn'>
+    </div>
+
+  </form>
+</div>
+
+<script src='./js/encrypt_generate_login.js'>
+</script>
