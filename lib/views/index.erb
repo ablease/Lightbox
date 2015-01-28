@@ -1,61 +1,59 @@
 
-<!-- <div id="indexBody"> -->
-
 <% if current_user %>
 
-<nav class='navBar'>
-  <ul class=''>
-    <li class="navigation" id='home'>
-      <h1 id="navTitle"><a href='/'>Lightbox</a></h1>
-    </li>
-    <li class="navigation" id='logOut'>
-    <!--   <a href="#">Log out</a> -->
-    <form method="post" action="/login" >
-      <input type="hidden" name="_method" value="delete">
-      <input type="submit" value="Log out" class='button' id='logOutBtn'>
+  <nav class='navBar'>
+
+    <ul id="navList">
+      <li class="navigation" id='home'>
+        <h1><a id="navTitle" href='/'>Lightbox</a></h1>
+      </li>
+      <li class="navigation" id='logOut'>
+      <form method="post" action="/login" >
+        <input type="hidden" name="_method" value="delete">
+        <input type="submit" value="Log out" class='button' id='logOutBtn'>
+      </form>
+      </li>
+    </ul>
+
+  </nav>
+
+  <div id="mdtListContainer">
+    <ul class="mdtList">
+      <% @rooms.each do | room | %>
+
+      <li class="firstListElement">
+        <ul>
+          <li class="left leftList innerList">
+            <a class="mdtName" href="<%= room.url %>"><%= room.title %></a>
+          </li> 
+          <li class="right rightList innerList">
+            <form method="post" action="/chat_room/<%= room.id %>">
+              <input type="hidden" name="_method" value="delete">
+              <input type="submit" style='{font-family:foundation-icons;font-size:20px}' value="x" class="deleteBtn"> 
+            </form>
+          </li>
+        </ul>
+       </li>
+
+      <%end%>
+    </ul>
+  </div>
+
+
+  <div id="new-room">
+    <form action="new_room" method="post" id="new_room">
+      <input type="text" name="title" id="roomNameInput" placeholder="Type in room name">
+      <input type="submit" value="Add Room" class='button' id="addRoomButton">
     </form>
-    </li>
-  </ul>
-</nav>
-
-
-<!--  <div class="welcome">
-  <p id='welcomeMessage'> Welcome <%= current_user.email %>, go to <a href='/'>home</a></p>
-</div> -->
-
-<div id="mdtListContainer">
-  <ul class="mdtList">
-    <% @rooms.each do | room | %>
-    <li>
-      <ul>
-        <li><a href="<%= room.url %>"><%= room.title %></a></li> 
-        <li class="right">
-          <form method="post" action="/chat_room/<%= room.id %>">
-            <input type="hidden" name="_method" value="delete">
-            <input type="submit" style='{font-family:foundation-icons; font-size:20px}' value=" x" class="deleteBtn"> 
-          </form>
-        </li>
-      </ul>
-     </li>
-    <%end%>
-  </ul>
-</div>
-
-
-<div id="new-room">
-  <form action="new_room" method="post" id="new_room">
-    <input type="text" name="title" value="Type in room name">
-    <input type="submit" value="Add Room" class='button' id="addRoomButton">
-  </form>
-</div>
+  </div>
 
 <% else %>
 
-      <div class="banner">
-        <div class="large-4 large-offset-4 columns" id="titleContainer">
-          <h1 id="title">Lightbox</h1>
-        </div>
-      </div>
+  <div class="banner">
+    <div class="large-4 large-offset-4 columns" id="titleContainer">
+      <h1 id="title">Lightbox</h1>
+    </div>
+  </div>
   
   <div class="row">
     <div class="large-4 large-offset-4 columns" id="btnContainer">
@@ -65,5 +63,3 @@
   </div>
 
 <% end %>
-
-<!-- </div> -->
