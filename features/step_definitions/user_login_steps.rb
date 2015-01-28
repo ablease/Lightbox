@@ -1,6 +1,6 @@
 Given(/^I have inserted my email$/) do
   visit('/login')
-  fill_in 'email', :with => "Test@test.com"
+  fill_in 'email', :with => "test@test.com"
 end
 
 And(/^I have inserted my password$/) do
