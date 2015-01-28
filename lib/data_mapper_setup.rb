@@ -10,4 +10,3 @@ require './lib/models/room'
 DataMapper.finalize
 
 DataMapper.auto_upgrade!
-

@@ -7,9 +7,10 @@ class User
   property :id, Serial
   property :name, String
   property :email, String
-  property :password_digest, Text
+  property :password_digest, String, length: 180
   property :phone, Integer
   property :gmc_number, String
+  property :rsakeypub, String, length: 180
 
   def self.authenticate(email, password)
     user = first(:email => email)
@@ -25,11 +26,13 @@ class User
     self.password_digest = BCrypt::Password.create(password)
   end
 
+  attr_accessor :rsa_pu_keey
   attr_reader :email
   attr_reader :password
   attr_reader :gmc_number
   attr_accessor :password_confirmation
   validates_confirmation_of :password
+  # validates_presence_of :rsa_pu_keey
   # validates_uniqueness_of :email
   # validates_uniqueness_of :phone
 

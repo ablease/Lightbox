@@ -16,7 +16,7 @@
   <div class="row">
     <div class="large-4 columns">
       <label>Make a password
-        <input type='text' name='password' placeholder='Make a password'>
+        <input id= 'password' type='text' name='password' placeholder='Make a password'>
       </label>
     </div>
   </div>
@@ -34,11 +34,24 @@
       </label>
     </div>
   </div>
+
   <div class="row">
     <div class="large-4 columns">
       <label>
-        <input type='submit' name='sign_up' class="button" value="Sign Up">
+        <input type="hidden" id="genr_pub_key" name="genratepub_kay" value="geberated pgp-key">
+      </label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-4 columns">
+      <label>
+        <input id='sign_up' type='submit' name='sign_up' class="button" value="Sign Up">
       </label>
     </div>
   </div>
 </form>
+
+
+<script src='./js/encrypt_decrypt.js'>
+</script>

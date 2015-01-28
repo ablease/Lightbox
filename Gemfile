@@ -7,9 +7,12 @@ gem 'data_mapper'
 gem 'dm-postgres-adapter'
 gem 'bcrypt'
 gem 'foundation'
+gem 'pg'
+gem 'selenium-webdriver'
 gem 'puma'
 gem 'unicorn'
 gem 'passenger'
+gem 'json'
 
 group :development, :test do
   gem 'capybara'
@@ -19,12 +22,6 @@ group :development, :test do
   gem 'launchy'
   gem 'shotgun'
   gem 'database_cleaner'
-  
-end
-
-group :production do
-  gem 'pg'
 end
 
 gem "codeclimate-test-reporter", group: :test, require: nil
-

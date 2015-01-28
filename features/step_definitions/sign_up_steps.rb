@@ -1,10 +1,10 @@
 Given(/^I have entered my name$/) do
 	visit('/sign_up')
-	fill_in 'name', :with => "Test"
+	fill_in 'name', :with => "test"
 end
 
 Given(/^I have entered my email$/) do
-	fill_in 'email', :with => 'Test@test.com'
+	fill_in 'email', :with => 'test@test.com'
 end
 
 Given(/^I have entered my password$/) do
@@ -13,7 +13,7 @@ Given(/^I have entered my password$/) do
 end
 
 Given(/^I have entered my medical registration number$/) do
-	fill_in 'gmc_number', :with => '1234567'
+	fill_in 'gmc_number', :with => '1111111'
 end
 
 When(/^I click sign up$/) do
