@@ -12,13 +12,6 @@ class Lightbox < Sinatra::Base
     erb :chat_rooms
   end
 
-  post '/new_room' do 
-    title = params["title"]
-    url = "/chat_room/" + params["title"]
-    Room.create(:url => url, :title => title)
-    redirect to('/')
-  end
-
   delete '/chat_room/:id' do |id|
     room = Room.get!(id)
     room.destroy!
