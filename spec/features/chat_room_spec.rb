@@ -8,7 +8,7 @@ feature "Chat" do
     add_room("London")
     click_link("London")
     visit("/chat_room/London")
-    expect(page).to have_content("Chat Room")
+    expect(page).to have_content("London")
   end
 
   

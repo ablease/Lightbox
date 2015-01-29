@@ -25,5 +25,5 @@ def add_room(title)
 end
 
 def delete_room(title) 
-  click_button 'Delete'
+  click_button 'x'
 end

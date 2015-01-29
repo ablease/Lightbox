@@ -5,12 +5,13 @@ feature "User Sign up" do
 
   scenario 'As a new user visiting the site ' do
     expect{ sign_up('test', 'Test@test.com', 'test', 'test', '1111111') }.to change(User, :count).by 1
-    expect(page).to have_content('Welcome Test@test.com')
+    expect(page).to have_content('Successfully signed up')
     expect(User.first.email).to eq 'Test@test.com'
   end
 
   scenario 'with a password that doesnt match' do
-    expect{ sign_up('test', 'test@test.com', 'test', 'nomatch', '1111111') }.to change(User, :count).by(0)
+    sign_up('test', 'test@test.com', 'test', 'nomatch', '1111111') 
+    expect(page).to have_content("Your password doesn't match, please try again")
   end
   
   scenario 'with a gmc number that is not found' do
