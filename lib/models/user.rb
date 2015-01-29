@@ -32,8 +32,6 @@ class User
   attr_reader :gmc_number
   attr_accessor :password_confirmation
   validates_confirmation_of :password
-  # validates_presence_of :rsa_pu_keey
-  # validates_uniqueness_of :email
-  # validates_uniqueness_of :phone
+  validates_uniqueness_of :email
 
 end

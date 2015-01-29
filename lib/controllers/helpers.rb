@@ -38,8 +38,8 @@ def verify_gmc(number, name)
     redirect to('/sign_up')
   end
 
-  if doctors[number]["first_name"] != name
-    flash[:notice] = "The name and GMC number you provided do not match"  
+  if doctors[number]["first_name"] + ' ' + doctors[number]["last_name"] != name
+    flash[:notice] = "The name and GMC number you provided do not match"
     redirect to('/sign_up')
   end
 end
@@ -56,4 +56,3 @@ def send_email(email, token)
     :subject => 'Referral for Lightbox',
     :text => ('https://makers-lightbox.herokuapp.com/referral/' + token)
 end
-
