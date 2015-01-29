@@ -10,6 +10,6 @@ feature "Chat" do
     visit("/chat_room/London")
     expect(page).to have_content("London")
   end
-
   
 end
+
