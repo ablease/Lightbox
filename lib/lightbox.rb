@@ -1,10 +1,12 @@
 require 'sinatra/base'
 require 'rack-flash'
 require 'bcrypt'
+require 'json'
+require 'rest_client'
 
+require_relative 'controllers/helpers.rb'
 require_relative 'controllers/application'
 require_relative 'controllers/users'
-#require_relative 'controllers/sockets'
 require_relative 'controllers/rooms'
 require_relative 'data_mapper_setup'
 

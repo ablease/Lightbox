@@ -1,6 +1,3 @@
-require "json"
-require_relative './helpers.rb'
-
 class Lightbox < Sinatra::Base
 
   get '/sign_up' do
@@ -62,9 +59,6 @@ class Lightbox < Sinatra::Base
     user_json.to_json
   end
 
-  def current_user
-    @current_user ||= User.get(session[:user_id]) if session[:user_id]
-  end
 
 end
 
