@@ -23,7 +23,6 @@ feature "User Sign up" do
     sign_up('bad_name', 'test@test.com', 'test', 'test', '1111111')    
     expect(page).to have_content("The name and GMC number you provided do not match")
   end
-
 end
 
 feature "User Log In" do
@@ -61,6 +60,5 @@ feature "User Log out" do
     click_button('Log out')
     expect(page).to have_content("Goodbye!")
   end
-
 end
 
