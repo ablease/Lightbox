@@ -2,6 +2,16 @@ def current_user
   @current_user ||= User.get(session[:user_id]) if session[:user_id]
 end
 
+def create_user
+  @new_user = User.create!(name: params[:name],
+                           email: params[:email],
+                           rsakeypub: params[:genratepub_kay],
+                           password: params[:password],
+                           password_confirmation: params[:password_confirmation],
+                           gmc_number: params[:gmc_number])
+
+end
+
 def verify_gmc(number, name)
   json = File.read('api/doctors.json')
   doctors = JSON.parse(json)

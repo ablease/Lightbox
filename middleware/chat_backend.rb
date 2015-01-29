@@ -2,6 +2,7 @@ require 'faye/websocket'
 require 'thread'
 require 'json'
 require 'erb'
+
 module Chat
   class Sockets
     KEEPALIVE_TIME = 15 # in seconds

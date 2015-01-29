@@ -6,14 +6,7 @@ class Lightbox < Sinatra::Base
 
   post '/sign_up' do
     verify_gmc(params[:gmc_number], params[:name])
-    @new_user = User.create!(name: params[:name],
-                            email: params[:email],
-                            rsakeypub: params[:genratepub_kay],
-                            password: params[:password],
-                            password_confirmation: params[:password_confirmation],
-                            gmc_number: params[:gmc_number]
-                            )
-
+    create_user
     if 	@new_user.save
       session[:user_id] = @new_user.id
       flash[:notice] = "Successfully signed up"
@@ -22,9 +15,7 @@ class Lightbox < Sinatra::Base
       flash[:notice] = "Your password doesn't match, please try again"
       redirect '/sign_up'
     end
-
   end
-
 
   get '/login' do
     erb :login
@@ -33,7 +24,6 @@ class Lightbox < Sinatra::Base
   post '/login' do
     email, password = params[:email], params[:password]
     user = User.authenticate(email, password)
-
     if user
       session[:user_id] = user.id
       flash[:notice] = "Successfully logged in"
@@ -49,16 +39,6 @@ class Lightbox < Sinatra::Base
     flash[:notice] = ["Goodbye!"]
     redirect to('/')
   end
-
-  get '/pub_keys' do
-    user_json= []
-    User.each do |user_add|
-      user_to_add = { email: user_add.email, rsakeypub: user_add.rsakeypub }
-      user_json << user_to_add
-    end
-    user_json.to_json
-  end
-
 
 end
 
