@@ -65,4 +65,22 @@
   </div>
 
 
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation/foundation.js"></script>
+  <script src="js/foundation/foundation.reveal.js"></script>
+  <!-- Other JS plugins can be included here -->
+
+  <a href="#" data-reveal-id="myModal" class="radius button">You need a referral to use this application</a>
+
+  <div id="myModal" class="reveal-modal" data-reveal>
+    <h2>This application is for medical doctors only.</h2>
+    <p class="lead">To gain access to the sign up page, please contact a medical colleague or your organization to provide you with a referral</p>
+    <p>Thank you! </p>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+  <script type="text/javascript">
+  $(document).foundation();
+  </script>
+
 <% end %>
