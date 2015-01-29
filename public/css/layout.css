@@ -1,4 +1,5 @@
 /*@import url(http://fonts.googleapis.com/css?family=Stalemate);*/
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,700,300);
 
 /* Layout.erb Styling */
 .frame {
@@ -43,12 +44,51 @@ div #titleContainer {
 	text-align: center;
 }
 
-/* TODO: Sign_up.erb Styling */
+.navBar {
+	position: relative;
+	height: 12%;
+	/*display: block;*/
+}
+
+#navList {
+	width: 100%;
+	margin-left: 1%;
+}
+
+#navTitle {
+	font-family: 'Stalemate', cursive;
+	font-size: 125%;
+	width: 100%;
+	color: black;
+}
+
+#navHome {
+	margin-right: 45%;
+	font-family: 'Stalemate', cursive;
+	font-size: 125%;
+	width: 100%;
+	color: black;
+}
 
 
+.navigation {
+	display: inline-block;
+	max-width: 40%;
+	/*border: solid black;*/
+}
 
+#logOut {
+	font-family: 'Stalemate', cursive;
+	margin-left: 8%;
+	margin-bottom: 1%;
+}
 
-
-
-
-
+#logOutBtn {
+	font-family: 'Stalemate', cursive;
+	background-color: transparent;
+	font-size: 300%;
+	border: none;
+	padding: 0px;
+	cursor: pointer;
+	color: black;
+}

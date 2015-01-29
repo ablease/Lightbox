@@ -1,40 +1,19 @@
 
 <% if current_user %>
 
-  <nav class='navBar'>
-
-    <ul id="navList">
-      <li class="navigation" id='home_text'>
-        <h1><a id="navHome" href='/'>Home</a></h1>
-      </li>
-
-      <li class="navigation" id='home'>
-        <h1><a id="navTitle" href='/'>Lightbox</a></h1>
-      </li>
-
-      <li class="navigation" id='logOut'>
-      <form method="post" action="/login" >
-        <input type="hidden" name="_method" value="delete">
-        <input type="submit" value="Log out" class='button' id='logOutBtn'>
-      </form>
-      </li>
-    </ul>
-
-  </nav>
-
   <div id="mdtListContainer">
     <ul class="mdtList">
       <% @rooms.each do | room | %>
 
       <li class="firstListElement">
         <ul>
-          <li class="left leftList innerList">
+          <li class="left leftList innerList" id="room_title">
             <a class="mdtName" href="<%= room.url %>"><%= room.title %></a>
           </li>
-          <li class="right rightList innerList">
+          <li class="right rightList innerList" id="deletebtn">
             <form method="post" action="/chat_room/<%= room.id %>">
               <input type="hidden" name="_method" value="delete">
-              <input type="submit" style='{font-family:foundation-icons;font-size:20px}' value="x" class="deleteBtn">
+              <input type="submit" value="x" class="deleteBtn">
             </form>
           </li>
         </ul>

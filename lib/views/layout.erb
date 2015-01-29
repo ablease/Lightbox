@@ -9,12 +9,47 @@
     <link rel="stylesheet" type="text/css" href="/css/login.css">
     <link rel="stylesheet" type="text/css" href="/css/index.css">
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.js'></script>
-    
+
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Lightbox</title>
   </head>
 
+
+
+
+
+
   <body>
+
+    <% if current_user %>
+      <header>
+        <div class="frame">
+          <div class="contents">
+            <nav class='navBar'>
+
+              <ul id="navList">
+                <li class="navigation" id='home_text'>
+                  <h1><a id="navHome" href='/'>Home</a></h1>
+                </li>
+
+                <li class="navigation" id='home'>
+                  <h1><a id="navTitle" href='/'>Lightbox</a></h1>
+                </li>
+
+                <li class="navigation" id='logOut'>
+                  <form method="post" action="/login" >
+                    <input type="hidden" name="_method" value="delete">
+                    <input type="submit" value="Log out" class='button' id='logOutBtn'>
+                  </form>
+                </li>
+              </ul>
+
+            </nav>
+          </div>
+        </div>
+      </header>
+    <% end %>
+
     <div class="frame">
 
       <!-- <div class="row fullWidth"> -->

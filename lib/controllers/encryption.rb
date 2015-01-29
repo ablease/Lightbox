@@ -8,4 +8,3 @@ class Lightbox < Sinatra::Base
     user_json.to_json
   end
 end
-
