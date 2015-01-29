@@ -25,11 +25,11 @@
         <ul>
           <li class="left leftList innerList">
             <a class="mdtName" href="<%= room.url %>"><%= room.title %></a>
-          </li> 
+          </li>
           <li class="right rightList innerList">
             <form method="post" action="/chat_room/<%= room.id %>">
               <input type="hidden" name="_method" value="delete">
-              <input type="submit" style='{font-family:foundation-icons;font-size:20px}' value="x" class="deleteBtn"> 
+              <input type="submit" style='{font-family:foundation-icons;font-size:20px}' value="x" class="deleteBtn">
             </form>
           </li>
         </ul>
@@ -47,8 +47,8 @@
     </form>
   </div>
 
+  <a href="Referral" class="button secondary">Referral</a>
 
-<a href="Referral">Referral</a>
 
 <% else %>
 
@@ -63,5 +63,6 @@
       <a href="/login" class="button expand" id='btn'>Log In</a>
     </div>
   </div>
+
 
 <% end %>

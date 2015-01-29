@@ -5,10 +5,10 @@ class Lightbox < Sinatra::Base
     erb :index
   end
 
-  get '/Referral' do 
+  get '/Referral' do
     erb :refer
   end
-  
+
   post '/referral' do
     token = generate_referral_token
     send_email(params[:email], token)
@@ -21,5 +21,8 @@ class Lightbox < Sinatra::Base
     erb :sign_up
   end
 
-end
+  get'/sign_up_info' do
+    erb :sign_up_info
+  end
 
+end
