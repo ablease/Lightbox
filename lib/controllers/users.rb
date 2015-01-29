@@ -7,14 +7,9 @@ class Lightbox < Sinatra::Base
   post '/sign_up' do
     verify_gmc(params[:gmc_number], params[:name])
     create_user
-    if 	@new_user.save
-      session[:user_id] = @new_user.id
-      flash[:notice] = "Successfully signed up"
-      redirect '/'
-    else
-      flash[:notice] = "Your password doesn't match, please try again"
-      redirect '/sign_up'
-    end
+    sign_up_successful?
+    flash[:notice] = "Your password doesn't match, please try again"
+    redirect '/sign_up'
   end
 
   get '/login' do
@@ -22,16 +17,9 @@ class Lightbox < Sinatra::Base
   end
 
   post '/login' do
-    email, password = params[:email], params[:password]
-    user = User.authenticate(email, password)
-    if user
-      session[:user_id] = user.id
-      flash[:notice] = "Successfully logged in"
-      redirect to('/')
-    else
-      flash[:notice] = ["The email or password are incorrect"]
-      redirect to('/login')
-    end
+    login_successful?
+    flash[:notice] = ["The email or password are incorrect"]
+    redirect to('/login')
   end
 
   delete '/login' do

@@ -12,6 +12,24 @@ def create_user
 
 end
 
+def sign_up_successful?
+  if 	@new_user.save
+    session[:user_id] = @new_user.id
+    flash[:notice] = "Successfully signed up"
+    redirect '/'
+  end
+end
+
+def login_successful?
+  email, password = params[:email], params[:password]
+  user = User.authenticate(email, password)
+  if user
+    session[:user_id] = user.id
+    flash[:notice] = "Successfully logged in"
+    redirect to('/')
+  end
+end
+
 def verify_gmc(number, name)
   json = File.read('api/doctors.json')
   doctors = JSON.parse(json)
