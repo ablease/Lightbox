@@ -26,3 +26,4 @@ class Lightbox < Sinatra::Base
     redirect to ('/') 
   end
 end
+
