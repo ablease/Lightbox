@@ -92,3 +92,11 @@ div #titleContainer {
 	cursor: pointer;
 	color: black;
 }
+
+#notice {
+	font: 80 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
+}
+
