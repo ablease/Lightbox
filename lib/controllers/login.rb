@@ -6,13 +6,13 @@ class Lightbox < Sinatra::Base
 
   post '/login' do
     login_successful?
-    flash[:notice] = ["The email or password are incorrect"]
+    flash[:notice] = "The email or password are incorrect"
     redirect to('/login')
   end
 
   delete '/login' do
     session.clear
-    flash[:notice] = ["Goodbye!"]
+    flash[:notice] = "Goodbye!"
     redirect to('/')
   end
 
