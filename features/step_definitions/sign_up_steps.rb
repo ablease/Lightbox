@@ -1,6 +1,6 @@
 Given(/^I have entered my name$/) do
 	visit('referral/ABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCABCA')
-	fill_in 'name', :with => "test"
+	fill_in 'name', :with => "test example"
 end
 
 Given(/^I have entered my email$/) do

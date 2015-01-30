@@ -4,7 +4,7 @@ require 'helpers'
 feature "User Sign up" do
 
   scenario 'As a new user visiting the site ' do
-    sign_up('test', 'Test@test.com', 'test', 'test', '1111111')
+    sign_up('test example', 'Test@test.com', 'test', 'test', '1111111')
     expect(page).to have_content('Successfully signed up')
     expect(User.first.email).to eq 'Test@test.com'
   end
@@ -28,7 +28,7 @@ end
 feature "User Log In" do
 
   before :each do
-    sign_up('test', 'Test@test.com', 'test', 'test', '1111111')
+    sign_up('test example', 'Test@test.com', 'test', 'test', '1111111')
   end 
 
   scenario 'with email and password that match' do
@@ -52,7 +52,7 @@ end
 feature "User Log out" do
 
   before :each do 
-    sign_up('test', 'Test@test.com', 'test', 'test', '1111111')
+    sign_up('test example', 'Test@test.com', 'test', 'test', '1111111')
     log_in("Test@test.com", "test")
   end
 
