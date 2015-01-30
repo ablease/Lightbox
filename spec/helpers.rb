@@ -27,3 +27,4 @@ end
 def delete_room(title) 
   click_button 'x'
 end
+

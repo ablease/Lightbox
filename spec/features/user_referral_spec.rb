@@ -14,3 +14,4 @@ feature 'User wants to refer a colleague' do
     expect(page).to have_content('Email sent')
   end
 end
+

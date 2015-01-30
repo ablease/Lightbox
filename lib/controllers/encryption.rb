@@ -1,4 +1,5 @@
 class Lightbox < Sinatra::Base
+
   get '/pub_keys' do
     user_json= []
     User.each do |user_add|
