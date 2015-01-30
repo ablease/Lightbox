@@ -195,3 +195,7 @@ input#deletebtn{
 	font-size: 200%;
 	height: 2000px;
 }
+
+#logo {
+  padding-top: 40%;
+}
