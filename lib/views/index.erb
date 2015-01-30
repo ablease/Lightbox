@@ -45,16 +45,10 @@
   <div class="row">
     <div class="large-4 large-offset-4 columns" id="btnContainer">
       <a href="/login" class="button expand" id='btn'>Log In</a>
+      <a href="#" data-reveal-id="myModal" class="button expand" id='btn'>You need a referral to use this application</a>
     </div>
   </div>
 
-
-  <script src="js/vendor/jquery.js"></script>
-  <script src="js/foundation/foundation.js"></script>
-  <script src="js/foundation/foundation.reveal.js"></script>
-  <!-- Other JS plugins can be included here -->
-
-  <a href="#" data-reveal-id="myModal" class="radius button">You need a referral to use this application</a>
 
   <div id="myModal" class="reveal-modal" data-reveal>
     <h2>This application is for medical doctors only.</h2>
@@ -62,6 +56,12 @@
     <p>Thank you! </p>
     <a class="close-reveal-modal">&#215;</a>
   </div>
+
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation/foundation.js"></script>
+  <script src="js/foundation/foundation.reveal.js"></script>
+  <!-- Other JS plugins can be included here -->
+
 
   <script type="text/javascript">
   $(document).foundation();
