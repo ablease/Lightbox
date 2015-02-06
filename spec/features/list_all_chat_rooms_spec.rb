@@ -35,7 +35,7 @@ feature "User deletes an existing room" do
   scenario "when visiting the homepage" do 
     expect(Room.count).to eq(1)
     visit('/')
-    delete_room("London")
+    delete_room('London')
     expect(Room.count).to eq(0)
   end
 end

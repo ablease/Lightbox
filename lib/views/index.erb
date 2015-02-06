@@ -11,7 +11,7 @@
             <a class="mdtName" href="<%= room.url %>"><%= room.title %></a>
           </li>
           <li class="right rightList innerList" id="deletebtn">
-            <form method="post" action="/chat_room/<%= room.id %>">
+          <form method="post" action="/chat_room/<%= room.id %>" id="delete_<%= room.title %>">
               <input type="hidden" name="_method" value="delete">
               <input type="submit" value="x" class="deleteBtn">
             </form>

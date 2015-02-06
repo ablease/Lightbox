@@ -25,6 +25,8 @@ def add_room(title)
 end
 
 def delete_room(title) 
-  click_button 'x'
+  within('#delete_' + title) do
+    click_button 'x'
+  end
 end
 
