@@ -18,13 +18,13 @@ def log_in(email, password)
 end
 
 def add_room(title)
-  within('#new-room') do 
+  within('#new-room') do
     fill_in 'title', :with => title
     click_button 'Add Room'
   end
 end
 
-def delete_room(title) 
+def delete_room(title)
   within('#delete_' + title) do
     click_button 'x'
   end
